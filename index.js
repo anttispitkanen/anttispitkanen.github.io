@@ -1,3 +1,7 @@
+document.getElementById('heading').onclick=() => {
+    console.log("jou");
+};
+
 document.getElementById('contact').onclick=() => {
     document.getElementById('contact').classList.toggle('expanded');
     document.getElementById('contact-info').classList.toggle('shown');
