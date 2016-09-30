@@ -148,12 +148,19 @@ h1 {
 }
 
 .icon {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 7em;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+  position: relative;
   color: #555;
+
+	i {
+		position: absolute;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  font-size: 7em;
+	}
 }
 
 .icon-hidden {
