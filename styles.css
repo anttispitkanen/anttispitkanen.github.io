@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,62 +15,53 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+  display: block; }
+
 body {
-	line-height: 1;
-}
+  line-height: 1; }
+
 ol, ul {
-	list-style: none;
-}
+  list-style: none; }
+
 blockquote, q {
-	quotes: none;
-}
+  quotes: none; }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
-}
+  content: '';
+  content: none; }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+  border-collapse: collapse;
+  border-spacing: 0; }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /*Reset ends*/
-
 body {
   background-color: #555;
-  background-image: linear-gradient(
-    to right,
-    #444,
-    #666
-  );
-  text-align: center;
-}
+  background-image: linear-gradient(to right, #444, #666);
+  text-align: center; }
 
 h1 {
   text-align: center;
   font-size: 3em;
   color: #DDD;
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .contact {
   border-radius: 100%;
@@ -81,14 +71,11 @@ h1 {
   display: inline-block;
   position: relative;
   margin-top: 20px;
-
   -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  transition: height 0.6s, width 0.6s, border-radius 0.6s;
-
-}
+  transition: height 0.6s, width 0.6s, border-radius 0.6s; }
 
 .music {
   border-radius: 100%;
@@ -98,54 +85,41 @@ h1 {
   display: inline-block;
   position: relative;
   margin-top: 20px;
-
   -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  transition: height 0.6s, width 0.6s, border-radius 0.6s;
-
-}
+  transition: height 0.6s, width 0.6s, border-radius 0.6s; }
 
 .expanded {
   height: 100vh;
   width: 95%;
-  border-radius: 1%;
-}
+  border-radius: 1%; }
 
 .contact-info, .music-info {
-  //background-color: pink;
-  color: rgba(30,30,30,0);
+  color: rgba(30, 30, 30, 0);
   height: 0px;
   overflow: hidden;
   -webkit-transition: height 0.6s;
   -moz-transition: height 0.6s;
   -ms-transition: height 0.6s;
   -o-transition: height 0.6s;
-  transition: height 0.6s, color 0.6s;
-}
+  transition: height 0.6s, color 0.6s; }
 
 .shown {
   height: 60px;
-  color: rgba(30, 30, 30, 1);
-}
-
-
-
-
+  color: #1e1e1e; }
 
 .close {
   font-size: 3em;
   display: none;
-  color: #555;
-}
+  color: #555; }
 
 .close-shown {
   display: inline;
   float: right;
   margin-right: 10px;
-  margin-top: 4px;
-}
+  margin-top: 4px; }
 
 .icon {
   text-align: center;
@@ -153,9 +127,9 @@ h1 {
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 7em;
-  color: #555;
-}
+  color: #555; }
 
 .icon-hidden {
-  display: none;
-}
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */
