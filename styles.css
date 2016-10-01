@@ -179,6 +179,10 @@ h1 {
   cursor: pointer; }
 
 @media all and (max-width: 900px) {
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px; }
+
   .content-wrapper {
     height: 100%;
     justify-content: space-around;
@@ -207,6 +211,9 @@ h1 {
       .expanded:hover i {
         color: #555; } }
 @media all and (max-width: 600px) {
+  h1 {
+    font-size: 2em; }
+
   .content-wrapper {
     height: 100%;
     justify-content: center;
