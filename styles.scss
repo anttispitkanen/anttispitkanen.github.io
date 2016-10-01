@@ -71,12 +71,22 @@ h1 {
   text-align: center;
   font-size: 4em;
   color: #DDD;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.content-wrapper {
+	display: flex;
+	width: 100%;
+	max-width: 900px;
+	height: 100%;
+	margin: 0 auto;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
 }
 
 .contact, .music, .writing, .cooperation, .coding, .community  {
   border-radius: 100%;
-  background-color: #B6F;
 	height: 250px;
 	width: 250px;
   display: inline-block;
@@ -173,7 +183,7 @@ h1 {
 	margin: 10px;
 	h2 {
 		font-size: 2.5em;
-		margin: 20px 0;
+		margin: 35px 0;
 	}
 }
 
@@ -184,12 +194,12 @@ h1 {
 
 .contact-info {
 	img {
-		height: 200px;
-		width: auto;
+		width: 80%;
+		max-width: 300px;
+		height: auto;
 		border-radius: 100%;
 	}
 }
-
 
 
 
@@ -202,7 +212,105 @@ h1 {
 
 .close-shown {
   display: inline;
-  float: right;
+	position: absolute;
+	right: 0px;
   margin-right: 10px;
   margin-top: 4px;
+	cursor: pointer;
+}
+
+
+
+@media all and (max-width: 900px) {
+	.content-wrapper {
+		height: 100%;
+		justify-content: space-around;
+		align-content: center;
+	}
+
+	.contact, .music, .writing, .cooperation, .coding, .community {
+		width: 28%;
+		height: 28vw;
+		margin: 10px 0;
+		.icon {
+			i {
+				font-size: 6em;
+			}
+		}
+	}
+
+	.expanded {
+	  height: 100vh;
+	  width: 100%;
+	  border-radius: 0%;
+		box-shadow: 0px 0px 0px 0px blue;
+		&:hover {
+			box-shadow: 0px 0px 0px 0px #222;
+			i {
+				color: #555;
+			}
+		}
+		position: absolute;
+		margin: 0px auto;
+		top: 0px;
+		left: 0px;
+		z-index: 99;
+		overflow: scroll;
+	}
+}
+
+
+@media all and (max-width: 600px) {
+	.content-wrapper {
+		height: 100%;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.contact, .music, .writing, .cooperation, .coding, .community {
+		width: 40%;
+		height: 40vw;
+		max-width: 180px;
+		max-height: 180px;
+		margin: 10px 10px;
+		.icon {
+			i {
+				font-size: 5em;
+			}
+		}
+	}
+
+	.expanded {
+	  height: 100vh;
+	  width: 100vw;
+		max-height: 100vh;
+		max-width: 100vw;
+	  border-radius: 0%;
+		box-shadow: 0px 0px 0px 0px blue;
+		&:hover {
+			box-shadow: 0px 0px 0px 0px #222;
+			i {
+				color: #555;
+			}
+		}
+		position: absolute;
+		margin: 0px auto;
+		top: 0px;
+		left: 0px;
+		z-index: 99;
+		overflow: scroll;
+	}
+}
+
+
+
+
+@media all and (max-width: 350px) {
+	.contact, .music, .writing, .cooperation, .coding, .community {
+		.icon {
+			i {
+				font-size: 4em;
+			}
+		}
+	}
 }
