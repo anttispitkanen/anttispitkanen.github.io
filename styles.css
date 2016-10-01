@@ -63,40 +63,44 @@ h1 {
   color: #DDD;
   margin-top: 10px; }
 
-.contact {
+.contact, .music, .writing, .cooperation, .coding, .community {
   border-radius: 100%;
   background-color: #B6F;
   height: 200px;
   width: 200px;
   display: inline-block;
   position: relative;
-  margin-top: 20px;
+  margin: 20px;
   -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   transition: height 0.6s, width 0.6s, border-radius 0.6s; }
 
+.contact {
+  background-color: #B6F; }
+
 .music {
-  border-radius: 100%;
-  background-color: #5D2;
-  height: 200px;
-  width: 200px;
-  display: inline-block;
-  position: relative;
-  margin-top: 20px;
-  -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  transition: height 0.6s, width 0.6s, border-radius 0.6s; }
+  background-color: #5D2; }
+
+.writing {
+  background-color: #4AD; }
+
+.cooperation {
+  background-color: #CA7; }
+
+.coding {
+  background-color: #77D; }
+
+.community {
+  background-color: #D67; }
 
 .expanded {
   height: 100vh;
   width: 95%;
   border-radius: 1%; }
 
-.contact-info, .music-info {
+.contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info {
   color: rgba(30, 30, 30, 0);
   height: 0px;
   overflow: hidden;
@@ -110,6 +114,23 @@ h1 {
   height: 60px;
   color: #1e1e1e; }
 
+.icon {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  color: #555;
+  cursor: pointer; }
+  .icon i {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7em; }
+
+.icon-hidden {
+  display: none; }
+
 .close {
   font-size: 3em;
   display: none;
@@ -120,21 +141,5 @@ h1 {
   float: right;
   margin-right: 10px;
   margin-top: 4px; }
-
-.icon {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  color: #555; }
-  .icon i {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7em; }
-
-.icon-hidden {
-  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

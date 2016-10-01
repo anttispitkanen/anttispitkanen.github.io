@@ -39,19 +39,6 @@ document.getElementById('contact-icon').onclick=() => {
         ["contact-icon", "icon-hidden"]
     ]);
 };
-
-
-/*
-document.getElementById('contact-icon').onclick=() => {
-    addClassIfNotPresent('contact', 'expanded');
-    addClassIfNotPresent('contact-info', 'shown');
-    addClassIfNotPresent('contact-close', 'close-shown');
-    addClassIfNotPresent('contact-icon', 'icon-hidden');
-    console.log("avataan " + isExpanded);
-
-};
-*/
-
 document.getElementById('contact-close').onclick=() => {
     toggleClass([
         ["contact", "expanded"],
@@ -59,22 +46,89 @@ document.getElementById('contact-close').onclick=() => {
         ["contact-close", "close-shown"],
         ["contact-icon", "icon-hidden"]
     ]);
-    /*
-    document.getElementById('contact').classList.toggle('expanded');
-    document.getElementById('contact-info').classList.toggle('shown');
-    document.getElementById('contact-close').classList.toggle('close-shown');
-    document.getElementById('contact-icon').classList.toggle('icon-hidden');
-    */
 };
 
+document.getElementById('cooperation-icon').onclick=() => {
+    toggleClass([
+        ["cooperation", "expanded"],
+        ["cooperation-info", "shown"],
+        ["cooperation-close", "close-shown"],
+        ["cooperation-icon", "icon-hidden"]
+    ]);
+};
+document.getElementById('cooperation-close').onclick=() => {
+    toggleClass([
+        ["cooperation", "expanded"],
+        ["cooperation-info", "shown"],
+        ["cooperation-close", "close-shown"],
+        ["cooperation-icon", "icon-hidden"]
+    ]);
+};
 
+document.getElementById('music-icon').onclick=() => {
+    toggleClass([
+        ["music", "expanded"],
+        ["music-info", "shown"],
+        ["music-close", "close-shown"],
+        ["music-icon", "icon-hidden"]
+    ]);
+};
+document.getElementById('music-close').onclick=() => {
+    toggleClass([
+        ["music", "expanded"],
+        ["music-info", "shown"],
+        ["music-close", "close-shown"],
+        ["music-icon", "icon-hidden"]
+    ]);
+};
 
+document.getElementById('writing-icon').onclick=() => {
+    toggleClass([
+        ["writing", "expanded"],
+        ["writing-info", "shown"],
+        ["writing-close", "close-shown"],
+        ["writing-icon", "icon-hidden"]
+    ]);
+};
+document.getElementById('writing-close').onclick=() => {
+    toggleClass([
+        ["writing", "expanded"],
+        ["writing-info", "shown"],
+        ["writing-close", "close-shown"],
+        ["writing-icon", "icon-hidden"]
+    ]);
+};
 
+document.getElementById('community-icon').onclick=() => {
+    toggleClass([
+        ["community", "expanded"],
+        ["community-info", "shown"],
+        ["community-close", "close-shown"],
+        ["community-icon", "icon-hidden"]
+    ]);
+};
+document.getElementById('community-close').onclick=() => {
+    toggleClass([
+        ["community", "expanded"],
+        ["community-info", "shown"],
+        ["community-close", "close-shown"],
+        ["community-icon", "icon-hidden"]
+    ]);
+};
 
-
-document.getElementById('music').onclick=() => {
-    document.getElementById('music').classList.toggle('expanded');
-    document.getElementById('music-info').classList.toggle('shown');
-    document.getElementById('music-close').classList.toggle('close-shown');
-    document.getElementById('music-icon').classList.toggle('icon-hidden');
+document.getElementById('coding-icon').onclick=() => {
+    toggleClass([
+        ["coding", "expanded"],
+        ["coding-info", "shown"],
+        ["coding-close", "close-shown"],
+        ["coding-icon", "icon-hidden"]
+    ]);
+};
+document.getElementById('coding-close').onclick=() => {
+    toggleClass([
+        ["coding", "expanded"],
+        ["coding-info", "shown"],
+        ["coding-close", "close-shown"],
+        ["coding-icon", "icon-hidden"]
+    ]);
 };
