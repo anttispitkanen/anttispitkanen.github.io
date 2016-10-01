@@ -59,15 +59,15 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
   color: #DDD;
   margin-top: 10px; }
 
 .contact, .music, .writing, .cooperation, .coding, .community {
   border-radius: 100%;
   background-color: #B6F;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   display: inline-block;
   position: relative;
   margin: 20px;
@@ -75,7 +75,27 @@ h1 {
   -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  transition: height 0.6s, width 0.6s, border-radius 0.6s; }
+  transition: height 0.6s, width 0.6s, border-radius 0.6s;
+  box-shadow: 0px 0px 20px 3px #222; }
+  .contact .icon, .music .icon, .writing .icon, .cooperation .icon, .coding .icon, .community .icon {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    color: #555;
+    cursor: pointer; }
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9em; }
+  .contact .icon-hidden, .music .icon-hidden, .writing .icon-hidden, .cooperation .icon-hidden, .coding .icon-hidden, .community .icon-hidden {
+    display: none; }
+  .contact:hover, .music:hover, .writing:hover, .cooperation:hover, .coding:hover, .community:hover {
+    box-shadow: 0px 0px 20px 10px #222; }
+    .contact:hover i, .music:hover i, .writing:hover i, .cooperation:hover i, .coding:hover i, .community:hover i {
+      color: #222; }
 
 .contact {
   background-color: #B6F; }
@@ -97,10 +117,22 @@ h1 {
 
 .expanded {
   height: 100vh;
-  width: 95%;
-  border-radius: 1%; }
+  width: 100%;
+  border-radius: 0%;
+  box-shadow: 0px 0px 0px 0px blue;
+  position: absolute;
+  margin: 0px auto;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  overflow: scroll; }
+  .expanded:hover {
+    box-shadow: 0px 0px 0px 0px #222; }
+    .expanded:hover i {
+      color: #555; }
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info {
+  font-size: 1.2em;
   color: rgba(30, 30, 30, 0);
   height: 0px;
   overflow: hidden;
@@ -108,28 +140,20 @@ h1 {
   -moz-transition: height 0.6s;
   -ms-transition: height 0.6s;
   -o-transition: height 0.6s;
-  transition: height 0.6s, color 0.6s; }
+  transition: height 0.6s, color 0.6s;
+  margin: 10px; }
+  .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2 {
+    font-size: 2.5em;
+    margin: 20px 0; }
 
 .shown {
-  height: 60px;
+  height: auto;
   color: #1e1e1e; }
 
-.icon {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  color: #555;
-  cursor: pointer; }
-  .icon i {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7em; }
-
-.icon-hidden {
-  display: none; }
+.contact-info img {
+  height: 200px;
+  width: auto;
+  border-radius: 100%; }
 
 .close {
   font-size: 3em;
