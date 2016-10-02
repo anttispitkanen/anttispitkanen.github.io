@@ -19,7 +19,8 @@ function toggleShown(topic) {
         [topic, "expanded"],
         [topic+"-info", "shown"],
         [topic+"-close", "close-shown"],
-        [topic+"-icon", "icon-hidden"]
+        [topic+"-icon", "icon-hidden"],
+        ["body", "body-open"]
     ])
 }
 
