@@ -113,7 +113,7 @@ h1 {
   background-color: #B6F; }
 
 .music {
-  background-color: #5D2; }
+  background-color: #7F4; }
 
 .writing {
   background-color: #4AD; }
@@ -145,7 +145,7 @@ h1 {
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info {
   font-size: 1.2em;
-  color: rgba(30, 30, 30, 0);
+  color: rgba(50, 50, 50, 0);
   height: 0px;
   overflow: hidden;
   -webkit-transition: height 0.6s;
@@ -160,13 +160,19 @@ h1 {
 
 .shown {
   height: auto;
-  color: #1e1e1e; }
+  color: #323232; }
 
 .contact-info img {
   width: 80%;
-  max-width: 300px;
-  height: auto;
+  max-width: 250px;
+  height: 100%;
   border-radius: 100%; }
+
+.info-container {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; }
 
 .close {
   font-size: 3em;
@@ -180,6 +186,13 @@ h1 {
   margin-right: 10px;
   margin-top: 4px;
   cursor: pointer; }
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #BBB;
+  font-weight: 300; }
 
 @media all and (max-width: 900px) {
   h1 {
@@ -223,8 +236,8 @@ h1 {
     align-content: center; }
 
   .contact, .music, .writing, .cooperation, .coding, .community {
-    width: 40%;
-    height: 40vw;
+    width: 38%;
+    height: 38vw;
     max-width: 180px;
     max-height: 180px;
     margin: 10px 10px; }
