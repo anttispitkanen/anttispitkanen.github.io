@@ -66,6 +66,11 @@ h1 {
   color: #DDD;
   margin-top: 20px; }
 
+h3 {
+  color: #DDD;
+  margin-bottom: 20px;
+  font-weight: 300; }
+
 .content-wrapper {
   display: flex;
   width: 100%;
@@ -113,7 +118,7 @@ h1 {
   background-color: #B6F; }
 
 .music {
-  background-color: #7F4; }
+  background-color: #8F6; }
 
 .writing {
   background-color: #4AD; }
@@ -155,7 +160,13 @@ h1 {
   margin: 10px; }
   .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2 {
     font-size: 2.5em;
-    margin: 35px 0; }
+    line-height: 1.2em;
+    margin: 40px 0; }
+  .contact-info .in-short, .music-info .in-short, .cooperation-info .in-short, .writing-info .in-short, .coding-info .in-short, .community-info .in-short {
+    width: 95vw;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center; }
 
 .shown {
   height: auto;
@@ -170,10 +181,27 @@ h1 {
 .info-container {
   display: flex;
   align-content: flex-start;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap; }
-  .info-container ul li i {
-    color: #323232; }
+  .info-container .info-item {
+    width: 31vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin: 20px 0px;
+    font-size: 1em; }
+    .info-container .info-item h4 {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px; }
+    .info-container .info-item p {
+      margin: 20px;
+      text-align: left; }
+    .info-container .info-item .some-buttons {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center; }
+      .info-container .info-item .some-buttons a {
+        margin: 0 20px; }
 
 .close {
   font-size: 3em;
@@ -196,6 +224,9 @@ h1 {
   font-weight: 300;
   font-size: 0.9em; }
 
+@media all and (max-width: 1100px) {
+  .info-container .info-item {
+    width: 47vw; } }
 @media all and (max-width: 900px) {
   h1 {
     font-size: 3em;
@@ -225,9 +256,10 @@ h1 {
     z-index: 99;
     overflow: scroll; }
     .expanded:hover {
-      box-shadow: 0px 0px 0px 0px #222; }
-      .expanded:hover i {
-        color: #555; } }
+      box-shadow: 0px 0px 0px 0px #222; } }
+@media all and (max-width: 750px) {
+  .info-container .info-item {
+    width: 95vw; } }
 @media all and (max-width: 600px) {
   h1 {
     font-size: 2em; }

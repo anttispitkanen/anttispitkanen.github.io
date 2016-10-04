@@ -79,6 +79,12 @@ h1 {
   margin-top: 20px;
 }
 
+h3 {
+	color: #DDD;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
 .content-wrapper {
 	display: flex;
 	width: 100%;
@@ -140,7 +146,7 @@ h1 {
 	background-color: #B6F;
 }
 .music {
-	background-color: #7F4;
+	background-color: #8F6;
 }
 .writing {
 	background-color: #4AD;
@@ -163,6 +169,9 @@ h1 {
 	box-shadow: 0px 0px 0px 0px blue;
 	&:hover {
 		box-shadow: 0px 0px 0px 0px #222;
+		i {
+			//color: inherit;
+		}
 	}
 	position: absolute;
 	margin: 0px auto;
@@ -186,7 +195,15 @@ h1 {
 	margin: 10px;
 	h2 {
 		font-size: 2.5em;
-		margin: 35px 0;
+		line-height: 1.2em;
+		margin: 40px 0;
+	}
+
+	.in-short {
+		width: 95vw;
+		max-width: 600px;
+		margin: 20px auto;
+		text-align: center;
 	}
 
 }
@@ -209,11 +226,43 @@ h1 {
 .info-container {
 	display: flex;
 	align-content: flex-start;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
-	ul li i {
-		color: rgb(50,50,50);
+
+	//ul li i {
+	//	color: rgb(50,50,50);
+	//}
+
+	.info-item {
+		width: 31vw;
+		background-color: rgba(255,255,255,0.7);
+		border-radius: 5px;
+		margin: 20px 0px;
+		font-size: 1em;
+
+		h4 {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
+		p {
+			margin: 20px;
+			text-align: left;
+		}
+
+		.some-buttons {
+			width: 100%;
+			//display: flex;
+			//justify-content: space-around;
+			margin-bottom: 20px;
+			text-align: center;
+			a {
+				margin: 0 20px;
+			}
+		}
 	}
+
 }
 
 
@@ -240,6 +289,16 @@ h1 {
 	color: #BBB;
 	font-weight: 300;
 	font-size: 0.9em;
+}
+
+
+
+@media all and (max-width: 1100px) {
+	.info-container {
+		.info-item {
+			width: 47vw;
+		}
+	}
 }
 
 
@@ -273,9 +332,6 @@ h1 {
 		box-shadow: 0px 0px 0px 0px blue;
 		&:hover {
 			box-shadow: 0px 0px 0px 0px #222;
-			i {
-				color: #555;
-			}
 		}
 		position: absolute;
 		margin: 0px auto;
@@ -284,8 +340,19 @@ h1 {
 		z-index: 99;
 		overflow: scroll;
 	}
+
+
+
 }
 
+
+@media all and (max-width: 750px) {
+	.info-container {
+		.info-item {
+			width: 95vw;
+		}
+	}
+}
 
 
 
