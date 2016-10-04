@@ -140,11 +140,10 @@ h1 {
   overflow: scroll; }
   .expanded:hover {
     box-shadow: 0px 0px 0px 0px #222; }
-    .expanded:hover i {
-      color: #555; }
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info {
   font-size: 1.2em;
+  line-height: 1.4em;
   color: rgba(50, 50, 50, 0);
   height: 0px;
   overflow: hidden;
@@ -173,6 +172,8 @@ h1 {
   align-content: flex-start;
   justify-content: center;
   flex-wrap: wrap; }
+  .info-container ul li i {
+    color: #323232; }
 
 .close {
   font-size: 3em;
