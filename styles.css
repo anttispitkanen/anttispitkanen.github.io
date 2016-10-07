@@ -55,6 +55,9 @@ body {
 body {
   background-color: #555;
   background-image: linear-gradient(to right, #444, #666);
+  font-family: 'Droid Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
   text-align: center; }
   body .body-open {
     height: 100vh;
@@ -181,7 +184,7 @@ h3 {
   height: auto;
   color: #323232; }
 
-.contact-info img, .music-info img {
+.contact-info img {
   width: 80%;
   max-width: 250px;
   height: 100%;
@@ -209,14 +212,16 @@ h3 {
     .info-container .info-item p {
       margin: 20px;
       text-align: left;
-      font-size: 1em; }
+      font-size: 1em;
+      line-height: 1.5em; }
     .info-container .info-item .some-buttons {
       width: 100%;
       margin-top: 20px;
       margin-bottom: 30px;
       text-align: center; }
       .info-container .info-item .some-buttons a {
-        margin: 0 20px; }
+        margin: 0 20px;
+        font-size: 1.2em; }
 
 .close {
   font-size: 3em;
