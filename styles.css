@@ -196,6 +196,9 @@ h3 {
   max-width: 250px;
   height: 100%;
   border-radius: 100%; }
+.contact-info ul {
+  margin-top: 20px;
+  list-style-type: none; }
 
 .info-container {
   display: flex;
