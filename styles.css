@@ -60,7 +60,8 @@ body {
   font-size: 14px;
   text-align: center; }
   body .body-open {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow: hidden; }
 
 h1 {
@@ -84,7 +85,7 @@ h3 {
   align-content: center;
   flex-wrap: wrap; }
 
-.contact, .music, .writing, .cooperation, .coding, .community {
+.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
   border-radius: 100%;
   height: 240px;
   width: 240px;
@@ -97,7 +98,7 @@ h3 {
   -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
   transition: height 0.6s, width 0.6s, border-radius 0.6s;
   box-shadow: 0px 0px 20px 3px #222; }
-  .contact .icon, .music .icon, .writing .icon, .cooperation .icon, .coding .icon, .community .icon {
+  .contact .icon, .music .icon, .writing .icon, .cooperation .icon, .coding .icon, .community .icon, .wellbeing .icon {
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -105,16 +106,16 @@ h3 {
     position: relative;
     color: #555;
     cursor: pointer; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       font-size: 6em; }
-  .contact .icon-hidden, .music .icon-hidden, .writing .icon-hidden, .cooperation .icon-hidden, .coding .icon-hidden, .community .icon-hidden {
+  .contact .icon-hidden, .music .icon-hidden, .writing .icon-hidden, .cooperation .icon-hidden, .coding .icon-hidden, .community .icon-hidden, .wellbeing .icon-hidden {
     display: none; }
-  .contact:hover, .music:hover, .writing:hover, .cooperation:hover, .coding:hover, .community:hover {
+  .contact:hover, .music:hover, .writing:hover, .cooperation:hover, .coding:hover, .community:hover, .wellbeing:hover {
     box-shadow: 0px 0px 20px 10px #222; }
-    .contact:hover i, .music:hover i, .writing:hover i, .cooperation:hover i, .coding:hover i, .community:hover i {
+    .contact:hover i, .music:hover i, .writing:hover i, .cooperation:hover i, .coding:hover i, .community:hover i, .wellbeing:hover i {
       color: #222; }
 
 .contact {
@@ -123,7 +124,12 @@ h3 {
 .music {
   background-color: #8F6; }
 
+/*
 .writing {
+	background-color: #4AD;
+}
+*/
+.wellbeing {
   background-color: #4AD; }
 
 .cooperation {
@@ -136,7 +142,8 @@ h3 {
   background-color: #D67; }
 
 .expanded {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
   border-radius: 0%;
   box-shadow: 0px 0px 0px 0px blue;
@@ -151,7 +158,7 @@ h3 {
   .expanded i {
     color: #222; }
 
-.contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info {
+.contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
   font-size: 1.2em;
   line-height: 1.4em;
   color: rgba(50, 50, 50, 0);
@@ -163,18 +170,18 @@ h3 {
   -o-transition: height 0.6s;
   transition: height 0.6s, color 0.6s;
   margin: 10px; }
-  .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2 {
+  .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2, .wellbeing-info h2 {
     font-size: 2.5em;
     line-height: 1.2em;
     margin: 40px 0; }
-  .contact-info .large-some-buttons, .music-info .large-some-buttons, .cooperation-info .large-some-buttons, .writing-info .large-some-buttons, .coding-info .large-some-buttons, .community-info .large-some-buttons {
+  .contact-info .large-some-buttons, .music-info .large-some-buttons, .cooperation-info .large-some-buttons, .writing-info .large-some-buttons, .coding-info .large-some-buttons, .community-info .large-some-buttons, .wellbeing-info .large-some-buttons {
     width: 100%;
     max-width: 400px;
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-around;
     font-size: 2em; }
-  .contact-info .in-short, .music-info .in-short, .cooperation-info .in-short, .writing-info .in-short, .coding-info .in-short, .community-info .in-short {
+  .contact-info .in-short, .music-info .in-short, .cooperation-info .in-short, .writing-info .in-short, .coding-info .in-short, .community-info .in-short, .wellbeing-info .in-short {
     width: 95vw;
     max-width: 600px;
     margin: 20px auto;
@@ -265,11 +272,11 @@ h3 {
   .content-wrapper {
     justify-content: space-around; }
 
-  .contact, .music, .writing, .cooperation, .coding, .community {
+  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 25vw;
     height: 25vw;
     margin: 10px 0; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
       font-size: 5em; }
 
   .expanded {
@@ -295,11 +302,11 @@ h3 {
     justify-content: space-around;
     align-content: center; }
 
-  .contact, .music, .writing, .cooperation, .coding, .community {
+  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 28vw;
     height: 28vw;
     margin: 10px 0; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
       font-size: 5em; }
 
   .expanded {
@@ -327,13 +334,13 @@ h3 {
     justify-content: center;
     align-content: center; }
 
-  .contact, .music, .writing, .cooperation, .coding, .community {
+  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 28vw;
     height: 28vw;
     max-width: 180px;
     max-height: 180px;
     margin: 10px 10px; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
       font-size: 4em; }
 
   .expanded {
@@ -352,11 +359,11 @@ h3 {
     .expanded:hover {
       box-shadow: 0px 0px 0px 0px #222; } }
 @media all and (max-width: 500px) {
-  .contact, .music, .writing, .cooperation, .coding, .community {
+  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 30vw;
     height: 30vw;
     margin: 10px 20px; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i {
+    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
       font-size: 3em; }
 
   .expanded {

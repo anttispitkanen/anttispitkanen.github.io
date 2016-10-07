@@ -33,8 +33,13 @@ document.getElementById('cooperation-close').onclick=function() { toggleShown("c
 document.getElementById('music-icon').onclick=function() { toggleShown("music"); };
 document.getElementById('music-close').onclick=function() { toggleShown("music"); };
 
+/*
 document.getElementById('writing-icon').onclick=function() { toggleShown("writing"); };
 document.getElementById('writing-close').onclick=function() { toggleShown("writing"); };
+*/
+
+document.getElementById('wellbeing-icon').onclick=function() { toggleShown("wellbeing") };
+document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing") };
 
 document.getElementById('community-icon').onclick=function() { toggleShown("community"); };
 document.getElementById('community-close').onclick=function() { toggleShown("community"); };
