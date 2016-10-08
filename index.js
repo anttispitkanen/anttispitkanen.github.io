@@ -47,26 +47,6 @@ function addAClass(arrayOfArrays) {
     }
 }
 
-function hideElement(topic) {
-    removeAClass([
-        [topic, "expanded"],
-        [topic+"-info", "shown"],
-        [topic+"-close", "close-shown"],
-        [topic+"-icon", "icon-hidden"],
-        ["body", "body-open"]
-    ]);
-};
-
-function showElement(topic) {
-    addAClass([
-        [topic, "expanded"],
-        [topic+"-info", "shown"],
-        [topic+"-close", "close-shown"],
-        [topic+"-icon", "icon-hidden"],
-        ["body", "body-open"]
-    ]);
-};
-
 //the elements listed in correct order for swiping to be possible
 var classes = ["contact", "cooperation", "coding", "wellbeing", "music", "community"];
 
@@ -119,8 +99,8 @@ function switchToNextElement() {
         nextElement = openElement+1;
     }
 
-    hideElement(classes[openElement]);
-    showElement(classes[nextElement]);
+    toggleShown(classes[openElement]);
+    toggleShown(classes[nextElement]);
 }
 
 //for switching to the previous element
@@ -129,6 +109,16 @@ function switchToPreviousElement() {
         return;
     }
 
+    var openElement = findTheOpenElement();
+    var previousElement = null;
+    if(openElement === 0) {
+        previousElement = 5;
+    } else {
+        previousElement = openElement-1;
+    }
+
+    toggleShown(classes[openElement]);
+    toggleShown(classes[previousElement]);
 }
 
 
@@ -156,20 +146,21 @@ document.getElementById('community-close').onclick=function() { toggleShown("com
 //pressing key right takes to next element
 //pressing key left takes to previous element
 document.onkeydown=function(evt) {
-    console.log("nappulaa painettu");
     if("key" in evt) {
         if(evt.key === "Esc" || evt.key === "Escape") {
             removeShown();
         } else if (evt.key === "ArrowRight") {
-            console.log("right key registered with evt.key");
             switchToNextElement();
+        } else if (evt.key === "ArrowLeft") {
+            switchToPreviousElement();
         }
     } else {
         if(evt.keyCode === 27) {
             removeShown();
         } else if (evt.keyCode === 39) { //right key
-            console.log("right key registered with evt.keyCode");
             switchToNextElement();
+        } else if (evt.keyCode === 37) { //left key
+            switchToPreviousElement();
         }
     }
 };
@@ -208,6 +199,7 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             /* left swipe */
+            switchToPreviousElement();
         } else {
             /* right swipe */
             switchToNextElement();
