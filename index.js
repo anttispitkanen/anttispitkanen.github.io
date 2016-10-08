@@ -199,10 +199,10 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             /* left swipe */
-            switchToPreviousElement();
+            switchToNextElement();
         } else {
             /* right swipe */
-            switchToNextElement();
+            switchToPreviousElement();
         }
     }
     /* reset values */
