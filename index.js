@@ -36,9 +36,42 @@ function removeAClass(arrayOfArrays) {
     }
 }
 
+function addAClass(arrayOfArrays) {
+    for(var i=0; i<arrayOfArrays.length; i++) {
+        var id = arrayOfArrays[i][0];
+        var classToBeAdded = arrayOfArrays[i][1];
+
+        if(!document.getElementById(id).classList.contains(classToBeAdded)) {
+            document.getElementById(id).classList.add(classToBeAdded);
+        }
+    }
+}
+
+function hideElement(topic) {
+    removeAClass([
+        [topic, "expanded"],
+        [topic+"-info", "shown"],
+        [topic+"-close", "close-shown"],
+        [topic+"-icon", "icon-hidden"],
+        ["body", "body-open"]
+    ]);
+};
+
+function showElement(topic) {
+    addAClass([
+        [topic, "expanded"],
+        [topic+"-info", "shown"],
+        [topic+"-close", "close-shown"],
+        [topic+"-icon", "icon-hidden"],
+        ["body", "body-open"]
+    ]);
+};
+
+//the elements listed in correct order for swiping to be possible
+var classes = ["contact", "cooperation", "coding", "wellbeing", "music", "community"];
+
 //for removing all the shown classes on esc key event
 function removeShown() {
-    var classes = ["contact", "cooperation", "music", "wellbeing", "coding", "community"];
     for(var i=0; i<classes.length; i++) {
         var targetClass = classes[i];
         removeAClass([
@@ -49,38 +82,138 @@ function removeShown() {
             ["body", "body-open"]
         ])
     }
+}
+
+
+var somethingIsOpen = false;
+
+function findTheOpenElement() {
+    if(!somethingIsOpen) {
+        return;
+    }
+    var indexOfOpenElement = 0;
+    while(indexOfOpenElement < classes.length) {
+        var inspectedClass = classes[indexOfOpenElement];
+        console.log("inspectedClass is " + inspectedClass);
+        var classlist = document.getElementById(inspectedClass).classList;
+        if(classlist.contains('expanded')) {
+            return indexOfOpenElement;
+            break;
+        } else {
+            indexOfOpenElement++;
+        }
+    }
+}
+
+//for switching to the next element
+function switchToNextElement() {
+    if(!somethingIsOpen) {
+        return;
+    }
+
+    var openElement = findTheOpenElement();
+    var nextElement = null;
+    if(openElement === 5) {
+        nextElement = 0;
+    } else {
+        nextElement = openElement+1;
+    }
+
+    hideElement(classes[openElement]);
+    showElement(classes[nextElement]);
+}
+
+//for switching to the previous element
+function switchToPreviousElement() {
+    if(!somethingIsOpen) {
+        return;
+    }
 
 }
 
 
-document.getElementById('contact-icon').onclick=function() { toggleShown("contact"); };
-document.getElementById('contact-close').onclick=function() { toggleShown("contact"); };
+document.getElementById('contact-icon').onclick=function() { toggleShown("contact"); somethingIsOpen = true; };
+document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
-document.getElementById('cooperation-icon').onclick=function() { toggleShown("cooperation"); };
-document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); };
+document.getElementById('cooperation-icon').onclick=function() { toggleShown("cooperation"); somethingIsOpen = true; };
+document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
 
-document.getElementById('music-icon').onclick=function() { toggleShown("music"); };
-document.getElementById('music-close').onclick=function() { toggleShown("music"); };
+document.getElementById('coding-icon').onclick=function() { toggleShown("coding"); somethingIsOpen = true; };
+document.getElementById('coding-close').onclick=function() { toggleShown("coding"); somethingIsOpen = false; };
 
-document.getElementById('wellbeing-icon').onclick=function() { toggleShown("wellbeing") };
-document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing") };
+document.getElementById('wellbeing-icon').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = true; };
+document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = false; };
 
-document.getElementById('community-icon').onclick=function() { toggleShown("community"); };
-document.getElementById('community-close').onclick=function() { toggleShown("community"); };
+document.getElementById('music-icon').onclick=function() { toggleShown("music"); somethingIsOpen = true; };
+document.getElementById('music-close').onclick=function() { toggleShown("music"); somethingIsOpen = false; };
 
-document.getElementById('coding-icon').onclick=function() { toggleShown("coding"); };
-document.getElementById('coding-close').onclick=function() { toggleShown("coding"); };
+document.getElementById('community-icon').onclick=function() { toggleShown("community"); somethingIsOpen = true; };
+document.getElementById('community-close').onclick=function() { toggleShown("community"); somethingIsOpen = false; };
+
+
 
 //regardless of which div is open pressing esc will try to close them all
+//pressing key right takes to next element
+//pressing key left takes to previous element
 document.onkeydown=function(evt) {
     console.log("nappulaa painettu");
     if("key" in evt) {
         if(evt.key === "Esc" || evt.key === "Escape") {
             removeShown();
+        } else if (evt.key === "ArrowRight") {
+            console.log("right key registered with evt.key");
+            switchToNextElement();
         }
     } else {
         if(evt.keyCode === 27) {
             removeShown();
+        } else if (evt.keyCode === 39) { //right key
+            console.log("right key registered with evt.keyCode");
+            switchToNextElement();
         }
     }
+};
+
+
+
+
+
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+function handleTouchStart(evt) {
+    xDown = evt.touches[0].clientX;
+    yDown = evt.touches[0].clientY;
+};
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    //only do something if something is opened
+    if (!somethingIsOpen) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* left swipe */
+        } else {
+            /* right swipe */
+            switchToNextElement();
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
 };
