@@ -209,3 +209,11 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
+
+document.addEventListener('backbutton', function() {
+    if(somethingIsOpen) {
+        removeShown();
+    } else {
+        history.go(-1);
+    }
+});
