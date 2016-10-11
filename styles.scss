@@ -116,11 +116,11 @@ h3 {
   position: relative;
   margin: 20px;
 
-  -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
-  transition: height 0.6s, width 0.6s, border-radius 0.6s;
+//  -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
+//  -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
+//  -ms-transition: height 0.6s, width 0.6s, border-radius 0.6s;
+//  -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
+//  transition: height 0.6s, width 0.6s, border-radius 0.6s;
 
 	box-shadow: 0px 0px 20px 3px #222;
 
@@ -160,11 +160,6 @@ h3 {
 .music {
 	background-color: #8F6;
 }
-/*
-.writing {
-	background-color: #4AD;
-}
-*/
 .wellbeing {
 	background-color: #4AD;
 }
@@ -187,9 +182,6 @@ h3 {
 	box-shadow: 0px 0px 0px 0px blue;
 	&:hover {
 		box-shadow: 0px 0px 0px 0px #222;
-		i {
-			//color: inherit;
-		}
 	}
 	position: absolute;
 	margin: 0px auto;
@@ -208,11 +200,11 @@ h3 {
 	color: rgba(50,50,50,0);
   height: 0px;
   overflow: hidden;
-  -webkit-transition: height 0.6s;
-  -moz-transition: height 0.6s;
-  -ms-transition: height 0.6s;
-  -o-transition: height 0.6s;
-  transition: height 0.6s, color 0.6s;
+//  -webkit-transition: height 0.6s;
+//  -moz-transition: height 0.6s;
+//  -ms-transition: height 0.6s;
+//  -o-transition: height 0.6s;
+//  transition: height 0.6s, color 0.6s;
 	margin: 10px;
 	h2 {
 		font-size: 2.5em;
@@ -243,30 +235,12 @@ h3 {
   color: rgba(50, 50, 50, 1);
 }
 
-.contact-info {
-	img {
-		width: 80%;
-		max-width: 250px;
-		height: 100%;
-		border-radius: 100%;
-	}
-
-	ul {
-		margin-top: 20px;
-		list-style-type: none;
-	}
-}
-
 
 .info-container {
 	display: flex;
 	align-content: flex-start;
 	justify-content: space-around;
 	flex-wrap: wrap;
-
-	//ul li i {
-	//	color: rgb(50,50,50);
-	//}
 
 	.info-item {
 		width: 31vw;
@@ -287,6 +261,13 @@ h3 {
 			height: auto;
 		}
 
+		iframe {
+			margin-top: 20px;
+			width: 95%;
+			height: 100%;
+			min-height: 300px;
+		}
+
 		p {
 			margin: 20px;
 			text-align: left;
@@ -296,8 +277,6 @@ h3 {
 
 		.some-buttons {
 			width: 100%;
-			//display: flex;
-			//justify-content: space-around;
 			margin-top: 20px;
 			margin-bottom: 30px;
 			text-align: center;
@@ -308,6 +287,62 @@ h3 {
 		}
 	}
 
+
+
+}
+
+.info-container-contact {
+	display: flex;
+	justify-content: center;
+
+	.who-am-i {
+		margin: 30px;
+	}
+
+	.contact-info-footer {
+		width: 100%;
+		position: absolute;
+		bottom: 0px;
+		margin-bottom: 30px;
+		display: none;
+	}
+
+
+	p {
+		margin: 20px auto;
+		text-align: left;
+		font-size: 1em;
+		line-height: 1.5em;
+		width: 100%;
+		max-width: 600px;
+	}
+
+	h4 {
+		font-size: 1.2em;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+
+	img {
+		width: 80%;
+		max-width: 220px;
+		height: 100%;
+		border-radius: 100%;
+		padding-top: 30px;
+		padding-left: 50px;
+	}
+
+	ul {
+		margin-top: 20px;
+		list-style-type: none;
+	}
+
+}
+
+.shown {
+	.contact-info-footer {
+		display: block;
+	}
 }
 
 
