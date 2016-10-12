@@ -198,8 +198,7 @@ h3 {
     .info-container .info-item iframe {
       margin-top: 20px;
       width: 95%;
-      height: 100%;
-      min-height: 300px; }
+      height: 300px; }
     .info-container .info-item p {
       margin: 20px;
       text-align: left;
