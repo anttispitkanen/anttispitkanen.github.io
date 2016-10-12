@@ -154,6 +154,9 @@ h3 {
 
 }
 
+
+//COLORS
+
 .contact {
 	background-color: #B6F;
 }
@@ -167,7 +170,8 @@ h3 {
 	background-color: #CA7;
 }
 .coding {
-	background-color: #77D;
+	//background-color: #77D;
+	background-color: #FB6;
 }
 .community {
 	background-color: #D67;
@@ -327,8 +331,8 @@ h3 {
 		max-width: 220px;
 		height: 100%;
 		border-radius: 100%;
-		padding-top: 30px;
-		padding-left: 50px;
+		margin-top: 30px;
+		margin-left: 50px;
 	}
 
 	ul {
@@ -372,10 +376,14 @@ h3 {
 
 
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1100px) {
 	.info-container {
 		.info-item {
 			width: 47vw;
+			&:nth-child(3) {
+				width: 95vw;
+				max-width: 750px;
+			}
 		}
 	}
 
@@ -524,6 +532,25 @@ h3 {
 		left: 0px;
 		z-index: 99;
 		overflow: scroll;
+	}
+
+	.info-container-contact {
+		display: block;
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+		}
+
+		.who-am-i {
+			display: inline-block;
+			width: 90vw;
+			margin: 20px 0;
+		}
+
+		.contact-info-footer {
+			position: relative;
+		}
 	}
 }
 

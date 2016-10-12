@@ -126,7 +126,7 @@ h3 {
   background-color: #CA7; }
 
 .coding {
-  background-color: #77D; }
+  background-color: #FB6; }
 
 .community {
   background-color: #D67; }
@@ -240,8 +240,8 @@ h3 {
     max-width: 220px;
     height: 100%;
     border-radius: 100%;
-    padding-top: 30px;
-    padding-left: 50px; }
+    margin-top: 30px;
+    margin-left: 50px; }
   .info-container-contact ul {
     margin-top: 20px;
     list-style-type: none; }
@@ -270,9 +270,12 @@ h3 {
   font-weight: 300;
   font-size: 0.9em; }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1100px) {
   .info-container .info-item {
     width: 47vw; }
+    .info-container .info-item:nth-child(3) {
+      width: 95vw;
+      max-width: 750px; }
 
   .expanded {
     height: 100vh;
@@ -376,7 +379,19 @@ h3 {
     z-index: 99;
     overflow: scroll; }
     .expanded:hover {
-      box-shadow: 0px 0px 0px 0px #222; } }
+      box-shadow: 0px 0px 0px 0px #222; }
+
+  .info-container-contact {
+    display: block;
+    text-align: center; }
+    .info-container-contact img {
+      margin: 0 auto; }
+    .info-container-contact .who-am-i {
+      display: inline-block;
+      width: 90vw;
+      margin: 20px 0; }
+    .info-container-contact .contact-info-footer {
+      position: relative; } }
 @media all and (max-width: 500px) {
   .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 30vw;

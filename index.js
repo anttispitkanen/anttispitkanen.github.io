@@ -74,7 +74,6 @@ function findTheOpenElement() {
     var indexOfOpenElement = 0;
     while(indexOfOpenElement < classes.length) {
         var inspectedClass = classes[indexOfOpenElement];
-        console.log("inspectedClass is " + inspectedClass);
         var classlist = document.getElementById(inspectedClass).classList;
         if(classlist.contains('expanded')) {
             return indexOfOpenElement;
@@ -122,7 +121,11 @@ function switchToPreviousElement() {
 }
 
 
-document.getElementById('contact-icon').onclick=function() { toggleShown("contact"); somethingIsOpen = true; };
+document.getElementById('contact-icon').onclick=function() {
+    toggleShown("contact");
+    somethingIsOpen = true;
+    window.history.pushState({section: "contact"}, "", "#contact");
+};
 document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
 document.getElementById('cooperation-icon').onclick=function() { toggleShown("cooperation"); somethingIsOpen = true; };
