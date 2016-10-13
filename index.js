@@ -128,7 +128,11 @@ document.getElementById('contact-icon').onclick=function() {
 };
 document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
-document.getElementById('cooperation-icon').onclick=function() { toggleShown("cooperation"); somethingIsOpen = true; };
+document.getElementById('cooperation-icon').onclick=function() {
+    toggleShown("cooperation");
+    somethingIsOpen = true;
+    window.history.pushState({section: "cooperation"}, "", "#cooperation");
+};
 document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
 
 document.getElementById('coding-icon').onclick=function() { toggleShown("coding"); somethingIsOpen = true; };
