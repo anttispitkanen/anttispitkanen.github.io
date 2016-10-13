@@ -122,16 +122,16 @@ function switchToPreviousElement() {
 
 
 document.getElementById('contact-icon').onclick=function() {
+    window.history.pushState({}, "", "#contact");
     toggleShown("contact");
     somethingIsOpen = true;
-    window.history.pushState({section: "contact"}, "", "#contact");
 };
 document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
 document.getElementById('cooperation-icon').onclick=function() {
+    window.history.pushState({}, "", "#cooperation");
     toggleShown("cooperation");
     somethingIsOpen = true;
-    window.history.pushState({section: "cooperation"}, "", "#cooperation");
 };
 document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
 
