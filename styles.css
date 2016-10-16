@@ -56,6 +56,12 @@ html.no-hover .contact:hover, html.no-hover .cooperation:hover, html.no-hover .c
   box-shadow: 0px 0px 20px 3px #222; }
   html.no-hover .contact:hover i, html.no-hover .cooperation:hover i, html.no-hover .coding:hover i, html.no-hover .wellbeing:hover i, html.no-hover .music:hover i, html.no-hover .community:hover i {
     color: inherit; }
+html.no-hover .expanded a {
+  color: #222; }
+  html.no-hover .expanded a i {
+    color: #222; }
+    html.no-hover .expanded a i:hover {
+      color: #222; }
 
 body {
   background-color: #555;

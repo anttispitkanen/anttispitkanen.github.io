@@ -68,6 +68,18 @@ html.no-hover {
 			}
 		}
 	}
+
+	.expanded {
+		a {
+			color: #222;
+			i {
+				color: #222;
+				&:hover {
+					color: #222;
+				}
+			}
+		}
+	}
 }
 
 
