@@ -1,3 +1,8 @@
+var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+if (touchsupport) {
+    document.documentElement.className += " no-hover";
+}
+
 
 //receives array of arrays with [id, class]
 function toggleClass(arrayOfArrays) {

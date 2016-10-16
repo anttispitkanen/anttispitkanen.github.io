@@ -59,7 +59,16 @@ body {
 
 
 
-
+html.no-hover {
+	.contact, .cooperation, .coding, .wellbeing, .music, .community {
+		&:hover {
+			box-shadow: 0px 0px 20px 3px #222;
+			i {
+				color: inherit;
+			}
+		}
+	}
+}
 
 
 body {
