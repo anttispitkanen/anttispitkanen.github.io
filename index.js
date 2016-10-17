@@ -67,6 +67,7 @@ function removeShown() {
             ["body", "body-open"]
         ])
     }
+    somethingIsOpen = false;
 }
 
 
@@ -142,42 +143,42 @@ document.getElementById('contact-icon').onclick=function() {
     toggleShown("contact");
     somethingIsOpen = true;
 };
-document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
+document.getElementById('contact-close').onclick=function() { window.history.back() };
 
 document.getElementById('cooperation-icon').onclick=function() {
     window.history.pushState(null, null, "#");
     toggleShown("cooperation");
     somethingIsOpen = true;
 };
-document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
+document.getElementById('cooperation-close').onclick=function() { window.history.back() };
 
 document.getElementById('coding-icon').onclick=function() {
     window.history.pushState(null, null, "#");
     toggleShown("coding");
     somethingIsOpen = true;
 };
-document.getElementById('coding-close').onclick=function() { toggleShown("coding"); somethingIsOpen = false; };
+document.getElementById('coding-close').onclick=function() { window.history.back() };
 
 document.getElementById('wellbeing-icon').onclick=function() {
     window.history.pushState(null, null, "#");
     toggleShown("wellbeing");
     somethingIsOpen = true;
 };
-document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = false; };
+document.getElementById('wellbeing-close').onclick=function() { window.history.back() };
 
 document.getElementById('music-icon').onclick=function() {
     window.history.pushState(null, null, "#");
     toggleShown("music");
     somethingIsOpen = true;
 };
-document.getElementById('music-close').onclick=function() { toggleShown("music"); somethingIsOpen = false; };
+document.getElementById('music-close').onclick=function() { window.history.back() };
 
 document.getElementById('community-icon').onclick=function() {
     window.history.pushState(null, null, "#");
     toggleShown("community");
     somethingIsOpen = true;
 };
-document.getElementById('community-close').onclick=function() { toggleShown("community"); somethingIsOpen = false; };
+document.getElementById('community-close').onclick=function() { window.history.back() };
 
 
 
@@ -185,21 +186,23 @@ document.getElementById('community-close').onclick=function() { toggleShown("com
 //pressing key right takes to next element
 //pressing key left takes to previous element
 document.onkeydown=function(evt) {
-    if("key" in evt) {
-        if(evt.key === "Esc" || evt.key === "Escape") {
-            removeShown();
-        } else if (evt.key === "ArrowRight") {
-            switchToNextElement();
-        } else if (evt.key === "ArrowLeft") {
-            switchToPreviousElement();
-        }
-    } else {
-        if(evt.keyCode === 27) {
-            removeShown();
-        } else if (evt.keyCode === 39) { //right key
-            switchToNextElement();
-        } else if (evt.keyCode === 37) { //left key
-            switchToPreviousElement();
+    if(somethingIsOpen) {
+        if("key" in evt) {
+            if(evt.key === "Esc" || evt.key === "Escape") {
+                window.history.back();
+            } else if (evt.key === "ArrowRight") {
+                switchToNextElement();
+            } else if (evt.key === "ArrowLeft") {
+                switchToPreviousElement();
+            }
+        } else {
+            if(evt.keyCode === 27) { //esc
+                window.history.back();
+            } else if (evt.keyCode === 39) { //right key
+                switchToNextElement();
+            } else if (evt.keyCode === 37) { //left key
+                switchToPreviousElement();
+            }
         }
     }
 };

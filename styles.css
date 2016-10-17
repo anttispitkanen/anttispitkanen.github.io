@@ -103,11 +103,11 @@ h3 {
   display: inline-block;
   position: relative;
   margin: 20px;
-  -webkit-transition: width 0.6s;
-  -moz-transition: width 0.6s;
-  -ms-transition: width 0.6s;
-  -o-transition: width 0.6s;
-  transition: width 0.6s;
+  -webkit-transition: width 0.6s ease;
+  -moz-transition: width 0.6s ease;
+  -ms-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
   box-shadow: 0px 0px 20px 3px #222; }
   .contact .icon, .music .icon, .writing .icon, .cooperation .icon, .coding .icon, .community .icon, .wellbeing .icon {
     display: inline-block;
@@ -132,17 +132,17 @@ h3 {
 .contact {
   background-color: #C7F; }
 
-.music {
-  background-color: #8F6; }
-
-.wellbeing {
-  background-color: #4AD; }
-
 .cooperation {
   background-color: #CA7; }
 
 .coding {
   background-color: #F97; }
+
+.wellbeing {
+  background-color: #4AD; }
+
+.music {
+  background-color: #8F6; }
 
 .community {
   background-color: #D67; }
@@ -169,11 +169,6 @@ h3 {
   line-height: 1.4em;
   height: 0px;
   overflow: hidden;
-  -webkit-transition: height 0.6s;
-  -moz-transition: height 0.6s;
-  -ms-transition: height 0.6s;
-  -o-transition: height 0.6s;
-  transition: height 0.6s;
   margin: 10px; }
   .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2, .wellbeing-info h2 {
     font-size: 2.5em;
