@@ -70,6 +70,16 @@ function removeShown() {
 }
 
 
+//epic hack for closing an open div when going back in history:
+//opening triggers a pushState function, so when ever a popstate fires, close all divs
+
+//should probably refactor everything so that every closing function would just fire a popstate
+//instead of directly calling removeShown => no unnecessary buildup of the history stack
+window.onpopstate = function() {
+    removeShown();
+}
+
+
 var somethingIsOpen = false;
 
 function findTheOpenElement() {
@@ -126,30 +136,47 @@ function switchToPreviousElement() {
 }
 
 
+//event listeners for opening and closing divs by clicking
 document.getElementById('contact-icon').onclick=function() {
-    window.history.pushState({}, "", "#contact");
+    window.history.pushState(null, null, "#contact");
     toggleShown("contact");
     somethingIsOpen = true;
 };
 document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
 document.getElementById('cooperation-icon').onclick=function() {
-    window.history.pushState({}, "", "#cooperation");
+    window.history.pushState(null, null, "#cooperation");
     toggleShown("cooperation");
     somethingIsOpen = true;
 };
 document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
 
-document.getElementById('coding-icon').onclick=function() { toggleShown("coding"); somethingIsOpen = true; };
+document.getElementById('coding-icon').onclick=function() {
+    window.history.pushState(null, null, "#coding");
+    toggleShown("coding");
+    somethingIsOpen = true;
+};
 document.getElementById('coding-close').onclick=function() { toggleShown("coding"); somethingIsOpen = false; };
 
-document.getElementById('wellbeing-icon').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = true; };
+document.getElementById('wellbeing-icon').onclick=function() {
+    window.history.pushState(null, null, "#wellbeing");
+    toggleShown("wellbeing");
+    somethingIsOpen = true;
+};
 document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = false; };
 
-document.getElementById('music-icon').onclick=function() { toggleShown("music"); somethingIsOpen = true; };
+document.getElementById('music-icon').onclick=function() {
+    window.history.pushState(null, null, "#music");
+    toggleShown("music");
+    somethingIsOpen = true;
+};
 document.getElementById('music-close').onclick=function() { toggleShown("music"); somethingIsOpen = false; };
 
-document.getElementById('community-icon').onclick=function() { toggleShown("community"); somethingIsOpen = true; };
+document.getElementById('community-icon').onclick=function() {
+    window.history.pushState(null, null, "#community");
+    toggleShown("community");
+    somethingIsOpen = true;
+};
 document.getElementById('community-close').onclick=function() { toggleShown("community"); somethingIsOpen = false; };
 
 
