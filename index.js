@@ -138,42 +138,42 @@ function switchToPreviousElement() {
 
 //event listeners for opening and closing divs by clicking
 document.getElementById('contact-icon').onclick=function() {
-    window.history.pushState(null, null, "#contact");
+    window.history.pushState(null, null, "#");
     toggleShown("contact");
     somethingIsOpen = true;
 };
 document.getElementById('contact-close').onclick=function() { toggleShown("contact"); somethingIsOpen = false; };
 
 document.getElementById('cooperation-icon').onclick=function() {
-    window.history.pushState(null, null, "#cooperation");
+    window.history.pushState(null, null, "#");
     toggleShown("cooperation");
     somethingIsOpen = true;
 };
 document.getElementById('cooperation-close').onclick=function() { toggleShown("cooperation"); somethingIsOpen = false; };
 
 document.getElementById('coding-icon').onclick=function() {
-    window.history.pushState(null, null, "#coding");
+    window.history.pushState(null, null, "#");
     toggleShown("coding");
     somethingIsOpen = true;
 };
 document.getElementById('coding-close').onclick=function() { toggleShown("coding"); somethingIsOpen = false; };
 
 document.getElementById('wellbeing-icon').onclick=function() {
-    window.history.pushState(null, null, "#wellbeing");
+    window.history.pushState(null, null, "#");
     toggleShown("wellbeing");
     somethingIsOpen = true;
 };
 document.getElementById('wellbeing-close').onclick=function() { toggleShown("wellbeing"); somethingIsOpen = false; };
 
 document.getElementById('music-icon').onclick=function() {
-    window.history.pushState(null, null, "#music");
+    window.history.pushState(null, null, "#");
     toggleShown("music");
     somethingIsOpen = true;
 };
 document.getElementById('music-close').onclick=function() { toggleShown("music"); somethingIsOpen = false; };
 
 document.getElementById('community-icon').onclick=function() {
-    window.history.pushState(null, null, "#community");
+    window.history.pushState(null, null, "#");
     toggleShown("community");
     somethingIsOpen = true;
 };
