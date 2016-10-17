@@ -222,6 +222,7 @@ function handleTouchMove(evt) {
     yDown = null;
 };
 
+/*
 document.addEventListener('backbutton', function() {
     if(somethingIsOpen) {
         removeShown();
@@ -229,3 +230,4 @@ document.addEventListener('backbutton', function() {
         history.go(-1);
     }
 });
+*/
