@@ -255,22 +255,19 @@ function handleTouchMove(evt) {
 
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
-    console.log("xDiff on " + xDiff)
 
-    var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    var swipeWidthTreshold = 0.3 * screenWidth;
-    console.log(swipeWidthTreshold);
+    //var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    //var swipeWidthThreshold = 0.3 * screenWidth;
+    //console.log(swipeWidthThreshold);
     //need to swipe at least 40% of screen width to activate swipe
 
     //if there's more horizontal movement than vertical movement
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-        if ( xDiff > 0 && Math.abs(xDiff) > swipeWidthTreshold) {
+        if ( xDiff > 0 ) {
             /* left swipe */
-            console.log("pitäs svaipperoida vasemmalle");
             switchToNextElement();
-        } else if (xDiff < 0 && Math.abs(xDiff) > swipeWidthTreshold) {
+        } else if (xDiff < 0 ) {
             /* right swipe */
-            console.log("pitäs svaipperoida oikeelle");
             switchToPreviousElement();
         }
     }
