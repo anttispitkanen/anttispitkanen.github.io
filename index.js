@@ -3,6 +3,8 @@ if (touchsupport) {
     document.documentElement.className += " no-hover";
 }
 
+var somethingIsOpen = false;
+
 
 //receives array of arrays with [id, class]
 function toggleClass(arrayOfArrays) {
@@ -56,19 +58,16 @@ function addAClass(arrayOfArrays) {
 var classes = ["contact", "cooperation", "coding", "wellbeing", "music", "community"];
 
 //for removing all the shown classes on esc key event
+//optimized to just focus on the one that's opened
 function removeShown() {
-    for(var i=0; i<classes.length; i++) {
-        var targetClass = classes[i];
-        removeAClass([
-            [targetClass, "expanded"],
-            [targetClass+"-info", "shown"],
-            [targetClass+"-close", "close-shown"],
-            [targetClass+"-icon", "icon-hidden"],
-            ["body", "body-open"]
-        ])
-        var targetId = "#" + targetClass;
-        document.querySelector(targetId).removeAttribute("style");
-    }
+    var targetClass = classes[findTheOpenElement()];
+    removeAClass([
+        [targetClass, "expanded"],
+        [targetClass+"-info", "shown"],
+        [targetClass+"-close", "close-shown"],
+        [targetClass+"-icon", "icon-hidden"],
+        ["body", "body-open"]
+    ])
     somethingIsOpen = false;
 
 }
@@ -84,8 +83,8 @@ window.onpopstate = function() {
 }
 
 
-var somethingIsOpen = false;
 
+//returns the index of the open element from the classes array
 function findTheOpenElement() {
     if(!somethingIsOpen) {
         return;
@@ -155,7 +154,6 @@ function switchToPreviousElement() {
 //event listeners for opening and closing divs by clicking
 document.getElementById('contact-icon').onclick=function() {
     window.history.pushState(null, null, "");
-    //document.querySelector("#contact").style.animation = "slideFromBelow 0.5s ease";
     document.querySelector("#contact").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("contact");
     somethingIsOpen = true;
@@ -204,7 +202,7 @@ document.getElementById('community-close').onclick=function() { window.history.b
 
 
 
-//regardless of which div is open pressing esc will try to close them all
+//pressing esc goes back in history => closes open div, epic hack
 //pressing key right takes to next element
 //pressing key left takes to previous element
 document.onkeydown=function(evt) {
@@ -228,8 +226,6 @@ document.onkeydown=function(evt) {
         }
     }
 };
-
-
 
 
 
@@ -259,13 +255,22 @@ function handleTouchMove(evt) {
 
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
+    console.log("xDiff on " + xDiff)
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
+    var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    var swipeWidthTreshold = 0.3 * screenWidth;
+    console.log(swipeWidthTreshold);
+    //need to swipe at least 40% of screen width to activate swipe
+
+    //if there's more horizontal movement than vertical movement
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        if ( xDiff > 0 && Math.abs(xDiff) > swipeWidthTreshold) {
             /* left swipe */
+            console.log("pitäs svaipperoida vasemmalle");
             switchToNextElement();
-        } else {
+        } else if (xDiff < 0 && Math.abs(xDiff) > swipeWidthTreshold) {
             /* right swipe */
+            console.log("pitäs svaipperoida oikeelle");
             switchToPreviousElement();
         }
     }
@@ -273,13 +278,3 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
-
-/*
-document.addEventListener('backbutton', function() {
-    if(somethingIsOpen) {
-        removeShown();
-    } else {
-        history.go(-1);
-    }
-});
-*/
