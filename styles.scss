@@ -136,6 +136,7 @@ h3 {
   display: inline-block;
   position: relative;
   margin: 20px;
+	box-shadow: 0px 0px 20px 3px #222;
 
 //  -webkit-transition: height 0.6s, width 0.6s, border-radius 0.6s;
 //  -moz-transition: height 0.6s, width 0.6s, border-radius 0.6s;
@@ -143,13 +144,15 @@ h3 {
 //  -o-transition: height 0.6s, width 0.6s, border-radius 0.6s;
 //  transition: height 0.6s, width 0.6s, border-radius 0.6s;
 
-	-webkit-transition: width 0.6s ease;
-	-moz-transition: width 0.6s ease;
-	-ms-transition: width 0.6s ease;
-	-o-transition: width 0.6s ease;
-	transition: width 0.6s ease;
+//	-webkit-transition: width 0.6s ease;
+//	-moz-transition: width 0.6s ease;
+//	-ms-transition: width 0.6s ease;
+//	-o-transition: width 0.6s ease;
+//	transition: width 0.6s ease;
 
-	box-shadow: 0px 0px 20px 3px #222;
+	//animation: slideFromLeft .6s ease;
+	//animation: slideFromRight .6s ease;
+
 
 	.icon {
 		display: inline-block;
@@ -163,7 +166,7 @@ h3 {
 		i {
 			position: absolute;
 		  top: 50%;
-		  transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 		  font-size: 6em;
 		}
 	}
@@ -223,23 +226,17 @@ h3 {
 	i {
 		color: #222;
 	}
+
+	//animation: slideFromBelow 0.5s ease-in;
 }
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
 	font-size: 1.2em;
 	line-height: 1.4em;
-	//color: rgba(50,50,50,0);
   height: 0px;
   overflow: hidden;
-  //-webkit-transition: height 0.6s;
-  //-moz-transition: height 0.6s;
-  //-ms-transition: height 0.6s;
-  //-o-transition: height 0.6s;
-  //transition: height 0.6s;//, color 0.6s;
-
-
-
 	margin: 10px;
+
 	h2 {
 		font-size: 2.5em;
 		line-height: 1.2em;
@@ -616,5 +613,23 @@ h3 {
 		left: 0px;
 		z-index: 99;
 		overflow: scroll;
+	}
+}
+
+@keyframes slideFromBelow {
+	from {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes slideFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes slideFromRight {
+	from {
+		transform: translateX(100%);
 	}
 }

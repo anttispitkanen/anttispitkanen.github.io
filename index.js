@@ -66,8 +66,11 @@ function removeShown() {
             [targetClass+"-icon", "icon-hidden"],
             ["body", "body-open"]
         ])
+        var targetId = "#" + targetClass;
+        document.querySelector(targetId).removeAttribute("style");
     }
     somethingIsOpen = false;
+
 }
 
 
@@ -114,6 +117,12 @@ function switchToNextElement() {
         nextElement = openElement+1;
     }
 
+    var openId = "#" + classes[openElement];
+    var nextId = "#" + classes[nextElement];
+
+    document.querySelector(openId).removeAttribute("style");
+    document.querySelector(nextId).setAttribute("style", "animation: slideFromRight 0.5s ease");
+
     toggleShown(classes[openElement]);
     toggleShown(classes[nextElement]);
 }
@@ -132,6 +141,12 @@ function switchToPreviousElement() {
         previousElement = openElement-1;
     }
 
+    var openId = "#" + classes[openElement];
+    var previousId = "#" + classes[previousElement];
+
+    document.querySelector(openId).removeAttribute("style");
+    document.querySelector(previousId).setAttribute("style", "animation: slideFromLeft 0.5s ease");
+
     toggleShown(classes[openElement]);
     toggleShown(classes[previousElement]);
 }
@@ -139,42 +154,49 @@ function switchToPreviousElement() {
 
 //event listeners for opening and closing divs by clicking
 document.getElementById('contact-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    //document.querySelector("#contact").style.animation = "slideFromBelow 0.5s ease";
+    document.querySelector("#contact").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("contact");
     somethingIsOpen = true;
 };
 document.getElementById('contact-close').onclick=function() { window.history.back() };
 
 document.getElementById('cooperation-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    document.querySelector("#cooperation").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("cooperation");
     somethingIsOpen = true;
 };
 document.getElementById('cooperation-close').onclick=function() { window.history.back() };
 
 document.getElementById('coding-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    document.querySelector("#coding").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("coding");
     somethingIsOpen = true;
 };
 document.getElementById('coding-close').onclick=function() { window.history.back() };
 
 document.getElementById('wellbeing-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    document.querySelector("#wellbeing").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("wellbeing");
     somethingIsOpen = true;
 };
 document.getElementById('wellbeing-close').onclick=function() { window.history.back() };
 
 document.getElementById('music-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    document.querySelector("#music").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("music");
     somethingIsOpen = true;
 };
 document.getElementById('music-close').onclick=function() { window.history.back() };
 
 document.getElementById('community-icon').onclick=function() {
-    window.history.pushState(null, null, "#");
+    window.history.pushState(null, null, "");
+    document.querySelector("#community").setAttribute("style", "animation: slideFromBelow 0.5s ease");
     toggleShown("community");
     somethingIsOpen = true;
 };
