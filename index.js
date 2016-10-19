@@ -120,7 +120,7 @@ function switchToNextElement() {
     var nextId = "#" + classes[nextElement];
 
     document.querySelector(openId).removeAttribute("style");
-    document.querySelector(nextId).setAttribute("style", "animation: slideFromRight 0.5s ease");
+    document.querySelector(nextId).setAttribute("style", "animation: slideFromRight 0.5s ease-in-out");
 
     toggleShown(classes[openElement]);
     toggleShown(classes[nextElement]);
@@ -144,7 +144,7 @@ function switchToPreviousElement() {
     var previousId = "#" + classes[previousElement];
 
     document.querySelector(openId).removeAttribute("style");
-    document.querySelector(previousId).setAttribute("style", "animation: slideFromLeft 0.5s ease");
+    document.querySelector(previousId).setAttribute("style", "animation: slideFromLeft 0.5s ease-in-out");
 
     toggleShown(classes[openElement]);
     toggleShown(classes[previousElement]);
