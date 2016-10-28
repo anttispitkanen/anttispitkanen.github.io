@@ -3,9 +3,6 @@ if (touchsupport) {
     document.documentElement.className += " no-hover";
 }
 
-//var somethingIsOpen = false;
-//the elements listed in correct order for swiping to be possible
-//var classes = ["contact", "cooperation", "coding", "wellbeing", "music", "community"];
 
 var state = {
     "openSection": null,
@@ -49,20 +46,6 @@ function removeAClass(arrayOfArrays) {
     }
 }
 
-//receives an array of arrays with the target class at index 0 and the added class at index 1
-/*
-function addAClass(arrayOfArrays) {
-    for(var i=0; i<arrayOfArrays.length; i++) {
-        var id = arrayOfArrays[i][0];
-        var classToBeAdded = arrayOfArrays[i][1];
-
-        if(!document.getElementById(id).classList.contains(classToBeAdded)) {
-            document.getElementById(id).classList.add(classToBeAdded);
-        }
-    }
-}
-*/
-
 
 //for removing all the shown classes on esc key event
 function removeShown() {
@@ -91,24 +74,7 @@ function indexOfOpenElement() {
         return state.sections.indexOf(state.openSection);
     }
 }
-/*
-function findTheOpenElement() {
-    if(!state.somethingIsOpen) {
-        return;
-    }
-    var indexOfOpenElement = 0;
-    while(indexOfOpenElement < classes.length) {
-        var inspectedClass = classes[indexOfOpenElement];
-        var classlist = document.getElementById(inspectedClass).classList;
-        if(classlist.contains('expanded')) {
-            return indexOfOpenElement;
-            break;
-        } else {
-            indexOfOpenElement++;
-        }
-    }
-}
-*/
+
 
 //for switching to the next element
 function switchToNextElement() {
@@ -256,7 +222,7 @@ function handleTouchMove(evt) {
     }
 
     //only do something if something is opened
-    if (state.openSection !== null) {
+    if (state.openSection === null) {
         return;
     }
 
@@ -265,11 +231,6 @@ function handleTouchMove(evt) {
 
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
-
-    //var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    //var swipeWidthThreshold = 0.3 * screenWidth;
-    //console.log(swipeWidthThreshold);
-    //need to swipe at least 40% of screen width to activate swipe
 
     //if there's more horizontal movement than vertical movement
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
