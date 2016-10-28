@@ -192,7 +192,7 @@ h3 {
 }
 .cooperation {
 	//background-color: #CA7;
-	background-color: #FC1;
+	background-color: #EC5;
 }
 .coding {
 	//background-color: #77D;
@@ -321,52 +321,84 @@ h3 {
 }
 
 .info-container-contact {
-	display: flex;
-	justify-content: center;
+	.img-and-text {
+		display: flex;
+		justify-content: center;
 
-	.who-am-i {
-		margin: 30px;
+		.who-am-i {
+			margin: 30px;
+		}
+
+
+		p {
+			margin: 20px auto;
+			text-align: left;
+			font-size: 1em;
+			line-height: 1.5em;
+			width: 100%;
+			max-width: 600px;
+		}
+
+		h4 {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
+		img {
+			width: 80%;
+			max-width: 220px;
+			height: 100%;
+			border-radius: 100%;
+			margin-top: 30px;
+			margin-left: 50px;
+		}
+
+		ul {
+			margin-top: 20px;
+			list-style-type: none;
+		}
+	}
+
+	.skills-and-interests {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		h4 {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+
+		.skills, .interests {
+			width: auto;
+			margin: 0 30px 20px;
+			ul {
+				text-align: left;
+			}
+		}
 	}
 
 	.contact-info-footer {
 		width: 100%;
-		position: absolute;
 		bottom: 0px;
+		margin-top: 50px;
 		margin-bottom: 30px;
 		display: none;
-	}
 
-
-	p {
-		margin: 20px auto;
-		text-align: left;
-		font-size: 1em;
-		line-height: 1.5em;
-		width: 100%;
-		max-width: 600px;
-	}
-
-	h4 {
-		font-size: 1.2em;
-		font-weight: bold;
-		margin-top: 20px;
-	}
-
-	img {
-		width: 80%;
-		max-width: 220px;
-		height: 100%;
-		border-radius: 100%;
-		margin-top: 30px;
-		margin-left: 50px;
-	}
-
-	ul {
-		margin-top: 20px;
-		list-style-type: none;
+		h4 {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
 	}
 
 }
+
+
 
 .shown {
 	.contact-info-footer {
@@ -561,23 +593,35 @@ h3 {
 	}
 
 	.info-container-contact {
-		display: block;
-		text-align: center;
+		.img-and-text {
+			display: block;
+			text-align: center;
 
-		img {
-			margin: 0 auto;
+			img {
+				margin: 0 auto;
+			}
+
+			.who-am-i {
+				display: inline-block;
+				width: 90vw;
+				margin: 20px 0;
+			}
 		}
 
-		.who-am-i {
-			display: inline-block;
-			width: 90vw;
-			margin: 20px 0;
-		}
+		.skills-and-interests {
+			display: block;
+			text-align: center;
 
-		.contact-info-footer {
-			position: relative;
+			.skills, .interests {
+				display: inline-block;
+				width: auto;
+				h4 {
+					text-align: center;
+				}
+			}
 		}
 	}
+
 }
 
 

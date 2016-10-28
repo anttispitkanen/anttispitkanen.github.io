@@ -128,7 +128,7 @@ h3 {
   background-color: #C7F; }
 
 .cooperation {
-  background-color: #FC1; }
+  background-color: #EC5; }
 
 .coding {
   background-color: #F97; }
@@ -223,38 +223,58 @@ h3 {
         margin: 0 20px;
         font-size: 1.2em; }
 
-.info-container-contact {
+.info-container-contact .img-and-text {
   display: flex;
   justify-content: center; }
-  .info-container-contact .who-am-i {
+  .info-container-contact .img-and-text .who-am-i {
     margin: 30px; }
-  .info-container-contact .contact-info-footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 30px;
-    display: none; }
-  .info-container-contact p {
+  .info-container-contact .img-and-text p {
     margin: 20px auto;
     text-align: left;
     font-size: 1em;
     line-height: 1.5em;
     width: 100%;
     max-width: 600px; }
-  .info-container-contact h4 {
+  .info-container-contact .img-and-text h4 {
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 20px; }
-  .info-container-contact img {
+  .info-container-contact .img-and-text img {
     width: 80%;
     max-width: 220px;
     height: 100%;
     border-radius: 100%;
     margin-top: 30px;
     margin-left: 50px; }
-  .info-container-contact ul {
+  .info-container-contact .img-and-text ul {
     margin-top: 20px;
     list-style-type: none; }
+.info-container-contact .skills-and-interests {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+  .info-container-contact .skills-and-interests h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left; }
+  .info-container-contact .skills-and-interests .skills, .info-container-contact .skills-and-interests .interests {
+    width: auto;
+    margin: 0 30px 20px; }
+    .info-container-contact .skills-and-interests .skills ul, .info-container-contact .skills-and-interests .interests ul {
+      text-align: left; }
+.info-container-contact .contact-info-footer {
+  width: 100%;
+  bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: none; }
+  .info-container-contact .contact-info-footer h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px; }
 
 .shown .contact-info-footer {
   display: block; }
@@ -391,17 +411,23 @@ h3 {
     .expanded:hover {
       box-shadow: 0px 0px 0px 0px #222; }
 
-  .info-container-contact {
+  .info-container-contact .img-and-text {
     display: block;
     text-align: center; }
-    .info-container-contact img {
+    .info-container-contact .img-and-text img {
       margin: 0 auto; }
-    .info-container-contact .who-am-i {
+    .info-container-contact .img-and-text .who-am-i {
       display: inline-block;
       width: 90vw;
       margin: 20px 0; }
-    .info-container-contact .contact-info-footer {
-      position: relative; } }
+  .info-container-contact .skills-and-interests {
+    display: block;
+    text-align: center; }
+    .info-container-contact .skills-and-interests .skills, .info-container-contact .skills-and-interests .interests {
+      display: inline-block;
+      width: auto; }
+      .info-container-contact .skills-and-interests .skills h4, .info-container-contact .skills-and-interests .interests h4 {
+        text-align: center; } }
 @media all and (max-width: 500px) {
   .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
     width: 30vw;
