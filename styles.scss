@@ -226,8 +226,6 @@ h3 {
 	i {
 		color: #222;
 	}
-
-	//animation: slideFromBelow 0.5s ease-in;
 }
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
@@ -617,19 +615,19 @@ h3 {
 }
 
 @keyframes slideFromBelow {
-	from {
+	0% {
 		transform: translateY(100%);
 	}
 }
 
 @keyframes slideFromLeft {
-	from {
+	0% {
 		transform: translateX(-100%);
 	}
 }
 
 @keyframes slideFromRight {
-	from {
+	0% {
 		transform: translateX(100%);
 	}
 }

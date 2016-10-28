@@ -426,13 +426,13 @@ h3 {
     .expanded:hover {
       box-shadow: 0px 0px 0px 0px #222; } }
 @keyframes slideFromBelow {
-  from {
+  0% {
     transform: translateY(100%); } }
 @keyframes slideFromLeft {
-  from {
+  0% {
     transform: translateX(-100%); } }
 @keyframes slideFromRight {
-  from {
+  0% {
     transform: translateX(100%); } }
 
 /*# sourceMappingURL=styles.css.map */
