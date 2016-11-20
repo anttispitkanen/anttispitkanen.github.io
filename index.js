@@ -32,6 +32,7 @@ function toggleShown(topic) {
         [topic+"-icon", "icon-hidden"],
         ["body", "body-open"]
     ])
+    document.querySelector("#"+topic).scrollTop = 0; //scroll to top when a section is opened
 }
 
 //for the esc key event
