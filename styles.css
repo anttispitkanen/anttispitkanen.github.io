@@ -65,7 +65,13 @@ html.no-hover .expanded a {
 
 body {
   background-color: #555;
-  background-image: linear-gradient(to right, #444, #666);
+  	/*
+  	background-image: linear-gradient(
+      	to right,
+      	#444,
+      	#666
+    	);
+  	*/
   font-family: 'Droid Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
