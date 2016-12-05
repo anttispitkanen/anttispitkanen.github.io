@@ -247,3 +247,9 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
+
+
+//remove the loading spinner when images have loaded
+window.addEventListener('load', function() {
+    document.getElementById('loading').className += " hidden";
+})
