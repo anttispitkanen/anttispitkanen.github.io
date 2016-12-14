@@ -1,7 +1,7 @@
 # My resume, sort of
 
-This is the repo for my sort-of-resume home page hosted on
-[GitHub pages] (https://anttispitkanen.github.io/).
+This is the repo for my sort-of-resume home page hosted at GitHub Pages and live at
+[anttipitkanen.com] (https://anttipitkanen.com/).
 
 The original idea was to have something a bit more visual for the introduction
 part on my [LinkedIn page] (https://linkedin.com/in/anttispitkanen).
