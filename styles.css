@@ -211,7 +211,7 @@ h3 {
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-family: 'Nothing You Could Do', cursive; }
 
 .shown {
@@ -259,27 +259,35 @@ h3 {
 .info-container-contact .img-and-text {
   display: flex;
   justify-content: center; }
-  .info-container-contact .img-and-text .who-am-i {
+  .info-container-contact .img-and-text .what-i-do {
     margin: 30px; }
-  .info-container-contact .img-and-text p {
-    margin: 20px auto;
-    text-align: left;
-    font-size: 1em;
-    line-height: 1.5em;
-    width: 100%;
-    max-width: 600px; }
-  .info-container-contact .img-and-text h4 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    font-family: 'Permanent Marker', cursive; }
+    .info-container-contact .img-and-text .what-i-do p {
+      margin: 20px auto;
+      text-align: right;
+      font-size: 1em;
+      line-height: 1.5em;
+      width: 100%;
+      max-width: 300px; }
   .info-container-contact .img-and-text img {
     width: 80%;
     max-width: 220px;
     height: 100%;
     border-radius: 100%;
-    margin-top: 30px;
-    margin-left: 50px; }
+    margin: 30px; }
+  .info-container-contact .img-and-text .who-am-i {
+    margin: 30px; }
+    .info-container-contact .img-and-text .who-am-i p {
+      margin: 20px auto;
+      text-align: left;
+      font-size: 1em;
+      line-height: 1.5em;
+      width: 100%;
+      max-width: 300px; }
+  .info-container-contact .img-and-text h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Permanent Marker', cursive; }
   .info-container-contact .img-and-text ul {
     margin-top: 20px;
     list-style-type: none; }
@@ -334,7 +342,8 @@ h3 {
   right: 10px;
   color: #BBB;
   font-weight: 300;
-  font-size: 0.9em; }
+  font-size: 1rem;
+  font-family: 'Permanent Marker', cursive; }
 
 @media all and (max-width: 1100px) {
   .info-container .info-item {

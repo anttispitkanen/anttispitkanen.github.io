@@ -298,7 +298,7 @@ h3 {
 		max-width: 600px;
 		margin: 20px auto;
 		text-align: center;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		font-family: 'Nothing You Could Do', cursive;
 	}
 
@@ -370,19 +370,44 @@ h3 {
 		display: flex;
 		justify-content: center;
 
+		.what-i-do {
+			margin: 30px;
+
+			p {
+				margin: 20px auto;
+				text-align: right;
+				font-size: 1em;
+				line-height: 1.5em;
+				width: 100%;
+				max-width: 300px;
+			}
+
+		}
+
+		img {
+			width: 80%;
+			max-width: 220px;
+			height: 100%;
+			border-radius: 100%;
+			margin: 30px;
+			//margin-left: 50px;
+		}
+
 		.who-am-i {
 			margin: 30px;
+
+			p {
+				margin: 20px auto;
+				text-align: left;
+				font-size: 1em;
+				line-height: 1.5em;
+				width: 100%;
+				max-width: 300px;
+			}
 		}
 
 
-		p {
-			margin: 20px auto;
-			text-align: left;
-			font-size: 1em;
-			line-height: 1.5em;
-			width: 100%;
-			max-width: 600px;
-		}
+
 
 		h4 {
 			font-size: 1.2em;
@@ -391,14 +416,7 @@ h3 {
 			font-family: 'Permanent Marker', cursive;
 		}
 
-		img {
-			width: 80%;
-			max-width: 220px;
-			height: 100%;
-			border-radius: 100%;
-			margin-top: 30px;
-			margin-left: 50px;
-		}
+
 
 		ul {
 			margin-top: 20px;
@@ -477,7 +495,8 @@ h3 {
 	right: 10px;
 	color: #BBB;
 	font-weight: 300;
-	font-size: 0.9em;
+	font-size: 1rem;
+	font-family: 'Permanent Marker', cursive;
 }
 
 
