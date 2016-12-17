@@ -1,3 +1,5 @@
+'use strict';
+
 var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 if (touchsupport) {
     document.documentElement.className += " no-hover";
@@ -8,6 +10,7 @@ var state = {
     "openSection": null,
     "sections": ["contact", "cooperation", "coding", "wellbeing", "music", "community"]
 }
+
 
 //receives array of arrays with [id, class]
 function toggleClass(arrayOfArrays) {
@@ -29,10 +32,12 @@ function toggleShown(topic) {
         [topic, "expanded"],
         [topic+"-info", "shown"],
         [topic+"-close", "close-shown"],
-        [topic+"-icon", "icon-hidden"],
-        ["body", "body-open"]
+        [topic+"-icon", "icon-hidden"]
     ])
-    document.querySelector("#"+topic).scrollTop = 0; //scroll to top when a section is opened
+
+    //scroll to top when a section is opened
+    window.scrollTo(0, 0);
+    document.querySelector("#"+topic).scrollTop = 0;
 }
 
 //for the esc key event
@@ -48,6 +53,19 @@ function removeAClass(arrayOfArrays) {
 }
 
 
+//this opens an element of the given target by sliding it from below
+//target is the DOM element
+function openElement(target) {
+    var targetID = target.id.substr(0, target.id.indexOf('-'));
+
+    window.history.pushState(null, null, "");
+    document.getElementById(targetID).style.animation = "slideFromBelow 0.5s ease-in-out";
+    toggleShown(targetID);
+    state.openSection = targetID;
+}
+
+
+
 //for removing all the shown classes on esc key event
 function removeShown() {
     var target = state.openSection;
@@ -55,18 +73,24 @@ function removeShown() {
         [target, "expanded"],
         [target+"-info", "shown"],
         [target+"-close", "close-shown"],
-        [target+"-icon", "icon-hidden"],
-        ["body", "body-open"]
+        [target+"-icon", "icon-hidden"]
     ])
     state.openSection = null;
 }
 
 
 //epic hack for closing an open div when going back in history:
-//opening triggers a pushState function, so when ever a popstate fires, close the open class
+//opening triggers a pushState function, so when ever a popstate fires,
+//close the open class after animating it down
 window.onpopstate = function() {
-    removeShown();
+    var targetElement = state.openSection;
+    document.querySelector("#" + targetElement).style.animation = "slideDown 0.5s ease-in-out";
+
+    setTimeout(function() {
+        removeShown();
+    }, 400);
 }
+
 
 
 //returns the index of the open element from the classes array
@@ -91,11 +115,11 @@ function switchToNextElement() {
         nextElement = openElement+1;
     }
 
-    var openId = "#" + state.sections[openElement];
-    var nextId = "#" + state.sections[nextElement];
+    var openID = state.sections[openElement];
+    var nextID = state.sections[nextElement];
 
-    document.querySelector(openId).removeAttribute("style");
-    document.querySelector(nextId).setAttribute("style", "animation: slideFromRight 0.5s ease-in-out");
+    document.getElementById(openID).style.animation = "";
+    document.getElementById(nextID).style.animation = "slideFromRight 0.5s ease-in-out";
 
     toggleShown(state.sections[openElement]);
     toggleShown(state.sections[nextElement]);
@@ -116,11 +140,11 @@ function switchToPreviousElement() {
         previousElement = openElement-1;
     }
 
-    var openId = "#" + state.sections[openElement];
-    var previousId = "#" + state.sections[previousElement];
+    var openID = state.sections[openElement];
+    var previousID = state.sections[previousElement];
 
-    document.querySelector(openId).removeAttribute("style");
-    document.querySelector(previousId).setAttribute("style", "animation: slideFromLeft 0.5s ease-in-out");
+    document.getElementById(openID).style.animation = "";
+    document.getElementById(previousID).style.animation = "slideFromLeft 0.5s ease-in-out";
 
     toggleShown(state.sections[openElement]);
     toggleShown(state.sections[previousElement]);
@@ -128,54 +152,34 @@ function switchToPreviousElement() {
 }
 
 
-//event listeners for opening and closing divs by clicking
-document.getElementById('contact-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#contact").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("contact");
-    state.openSection = "contact";
-};
-document.getElementById('contact-close').onclick=function() { window.history.back() };
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* IIFE for adding event listeners for opening sections */
+(function openListeners() {
+    var sections = state.sections;
+    for (var i = 0; i < sections.length; i++) {
+        var id = sections[i] + '-icon';
+        document.getElementById(id).onclick = function(event) {
+            var target = event.currentTarget;
+            openElement(target);
+        }
+    }
+})();
 
-document.getElementById('cooperation-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#cooperation").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("cooperation");
-    state.openSection = "cooperation";
-};
-document.getElementById('cooperation-close').onclick=function() { window.history.back() };
 
-document.getElementById('coding-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#coding").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("coding");
-    state.openSection = "coding";
-};
-document.getElementById('coding-close').onclick=function() { window.history.back() };
 
-document.getElementById('wellbeing-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#wellbeing").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("wellbeing");
-    state.openSection = "wellbeing";
-};
-document.getElementById('wellbeing-close').onclick=function() { window.history.back() };
 
-document.getElementById('music-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#music").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("music");
-    state.openSection = "music";
-};
-document.getElementById('music-close').onclick=function() { window.history.back() };
-
-document.getElementById('community-icon').onclick=function() {
-    window.history.pushState(null, null, "");
-    document.querySelector("#community").setAttribute("style", "animation: slideFromBelow 0.5s ease");
-    toggleShown("community");
-    state.openSection = "community";
-};
-document.getElementById('community-close').onclick=function() { window.history.back() };
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* IIFE FOR CLOSING LISTENERS */
+(function closeListeners() {
+    for (var i = 0; i < state.sections.length; i++) {
+        var id = state.sections[i] + '-close';
+        document.getElementById(id).onclick = function() { window.history.back() };
+    }
+})();
 
 
 
@@ -223,7 +227,7 @@ function handleTouchMove(evt) {
     }
 
     //only do something if something is opened
-    if (state.openSection === null) {
+    if (!state.openSection) {
         return;
     }
 
