@@ -1,0 +1,18 @@
+{
+    "name": "Antti Pitkänen homepage",
+    "short_name": "Antti Pitkänen",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background-color": "#555",
+    "theme_color": "#C7F",
+    "description": "The homepage of Antti Pitkänen, a creator",
+    "icons": [
+        {
+            "src": "/images/IconiAntti.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "scope": "/"
+}
