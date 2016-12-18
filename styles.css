@@ -82,17 +82,19 @@ html {
   padding: 0px; }
 
 /* CLEARFIX ENDS */
-html.no-hover .contact:hover, html.no-hover .cooperation:hover, html.no-hover .coding:hover, html.no-hover .wellbeing:hover, html.no-hover .music:hover, html.no-hover .community:hover {
+/* NO-HOVER FOR TOUCHSCREENS */
+html.no-hover .contact-trigger:hover, html.no-hover .cooperation-trigger:hover, html.no-hover .coding-trigger:hover, html.no-hover .wellbeing-trigger:hover, html.no-hover .music-trigger:hover, html.no-hover .community-trigger:hover {
   box-shadow: 0px 0px 20px 3px #222; }
-  html.no-hover .contact:hover i, html.no-hover .cooperation:hover i, html.no-hover .coding:hover i, html.no-hover .wellbeing:hover i, html.no-hover .music:hover i, html.no-hover .community:hover i {
-    color: inherit; }
-html.no-hover .expanded a {
+  html.no-hover .contact-trigger:hover i, html.no-hover .cooperation-trigger:hover i, html.no-hover .coding-trigger:hover i, html.no-hover .wellbeing-trigger:hover i, html.no-hover .music-trigger:hover i, html.no-hover .community-trigger:hover i {
+    color: #555; }
+html.no-hover .contact a, html.no-hover .cooperation a, html.no-hover .coding a, html.no-hover .wellbeing a, html.no-hover .music a, html.no-hover .community a {
   color: #222; }
-  html.no-hover .expanded a i {
+  html.no-hover .contact a i, html.no-hover .cooperation a i, html.no-hover .coding a i, html.no-hover .wellbeing a i, html.no-hover .music a i, html.no-hover .community a i {
     color: #222; }
-    html.no-hover .expanded a i:hover {
+    html.no-hover .contact a i:hover, html.no-hover .cooperation a i:hover, html.no-hover .coding a i:hover, html.no-hover .wellbeing a i:hover, html.no-hover .music a i:hover, html.no-hover .community a i:hover {
       color: #222; }
 
+/* NO-HOVER FOR TOUCHSCREENS */
 body {
   background-color: #555;
   font-family: 'Droid Sans', sans-serif;
@@ -126,9 +128,10 @@ body {
 /* SPINNER UNTIL IMAGES HAVE LOADED */
 h1 {
   text-align: center;
-  font-size: 3.5em;
+  font-size: 3rem;
   color: #DDD;
   padding-top: 20px;
+  padding-bottom: 10px;
   font-family: 'Permanent Marker', cursive; }
 
 h3 {
@@ -138,7 +141,8 @@ h3 {
   font-size: 1.2rem;
   font-family: 'Nothing You Could Do', cursive; }
 
-.content-wrapper {
+/* TRIGGERS */
+.triggers {
   display: flex;
   width: 100%;
   max-width: 900px;
@@ -147,80 +151,71 @@ h3 {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap; }
-
-.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-  border-radius: 100%;
-  height: 240px;
-  width: 240px;
-  display: inline-block;
-  position: relative;
-  margin: 20px;
-  box-shadow: 0px 0px 20px 3px #222; }
-  .contact .icon, .music .icon, .writing .icon, .cooperation .icon, .coding .icon, .community .icon, .wellbeing .icon {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+  .triggers .contact-trigger, .triggers .music-trigger, .triggers .writing-trigger, .triggers .cooperation-trigger, .triggers .coding-trigger, .triggers .community-trigger, .triggers .wellbeing-trigger {
+    border-radius: 100%;
+    height: 26vw;
+    width: 26vw;
+    max-height: 240px;
+    max-width: 240px;
     position: relative;
-    color: #555;
+    margin: 20px;
+    box-shadow: 0px 0px 20px 3px #222;
     cursor: pointer; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
+    .triggers .contact-trigger i, .triggers .music-trigger i, .triggers .writing-trigger i, .triggers .cooperation-trigger i, .triggers .coding-trigger i, .triggers .community-trigger i, .triggers .wellbeing-trigger i {
+      color: #555;
       position: absolute;
       top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 6em; }
-  .contact .icon-hidden, .music .icon-hidden, .writing .icon-hidden, .cooperation .icon-hidden, .coding .icon-hidden, .community .icon-hidden, .wellbeing .icon-hidden {
-    display: none; }
-  .contact:hover, .music:hover, .writing:hover, .cooperation:hover, .coding:hover, .community:hover, .wellbeing:hover {
-    box-shadow: 0px 0px 20px 10px #222; }
-    .contact:hover i, .music:hover i, .writing:hover i, .cooperation:hover i, .coding:hover i, .community:hover i, .wellbeing:hover i {
-      color: #222; }
+      font-size: 5rem; }
+    .triggers .contact-trigger:hover, .triggers .music-trigger:hover, .triggers .writing-trigger:hover, .triggers .cooperation-trigger:hover, .triggers .coding-trigger:hover, .triggers .community-trigger:hover, .triggers .wellbeing-trigger:hover {
+      box-shadow: 0px 0px 20px 10px #222; }
+      .triggers .contact-trigger:hover i, .triggers .music-trigger:hover i, .triggers .writing-trigger:hover i, .triggers .cooperation-trigger:hover i, .triggers .coding-trigger:hover i, .triggers .community-trigger:hover i, .triggers .wellbeing-trigger:hover i {
+        color: #222; }
 
 /* COLORS */
-.contact {
+.contact, .contact-trigger {
   background-color: #C7F; }
 
-.cooperation {
+.cooperation, .cooperation-trigger {
   background-color: #EC5; }
 
-.coding {
+.coding, .coding-trigger {
   background-color: #F97; }
 
-.wellbeing {
+.wellbeing, .wellbeing-trigger {
   background-color: #4AD; }
 
-.music {
+.music, .music-trigger {
   background-color: #8F6; }
 
-.community {
+.community, .community-trigger {
   background-color: #D67; }
 
-.expanded {
+/* SECTIONS */
+.contact, .cooperation, .coding, .wellbeing, .music, .community {
+  display: none;
   height: auto;
   min-height: 100vh;
   width: 100%;
-  border-radius: 0%;
-  box-shadow: 0px 0px 0px 0px blue;
   position: absolute;
   margin: 0px auto;
   top: 0px;
   left: 0px;
   z-index: 99; }
-  .expanded:hover {
-    box-shadow: 0px 0px 0px 0px #222; }
-  .expanded i {
+  .contact i, .cooperation i, .coding i, .wellbeing i, .music i, .community i {
     color: #222; }
 
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
-  font-size: 1.2em;
-  line-height: 1.4em;
-  height: 0px;
-  overflow: hidden;
-  margin: 10px; }
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin: 10px;
+  height: 100%;
+  color: #323232; }
   .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2, .wellbeing-info h2 {
-    font-size: 2.5em;
-    line-height: 1.2em;
-    margin: 40px 0;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin: 60px 0 40px;
     font-family: 'Permanent Marker', cursive; }
   .contact-info .large-some-buttons, .music-info .large-some-buttons, .cooperation-info .large-some-buttons, .writing-info .large-some-buttons, .coding-info .large-some-buttons, .community-info .large-some-buttons, .wellbeing-info .large-some-buttons {
     width: 100%;
@@ -228,7 +223,7 @@ h3 {
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-around;
-    font-size: 2em; }
+    font-size: 2rem; }
   .contact-info .in-short, .music-info .in-short, .cooperation-info .in-short, .writing-info .in-short, .coding-info .in-short, .community-info .in-short, .wellbeing-info .in-short {
     width: 95vw;
     max-width: 600px;
@@ -236,11 +231,8 @@ h3 {
     text-align: center;
     font-size: 1.3rem;
     font-family: 'Nothing You Could Do', cursive; }
-
-.shown {
-  height: 100%;
-  color: #323232;
-  overflow: scroll; }
+  .contact-info a, .music-info a, .cooperation-info a, .writing-info a, .coding-info a, .community-info a, .wellbeing-info a {
+    color: #323232; }
 
 .info-container {
   display: flex;
@@ -280,18 +272,16 @@ h3 {
         margin: 0 20px;
         font-size: 1.2em; }
 
+/* SPECIFIC LAYOUT FOR CONTACT PAGE */
+.info-container-contact h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Permanent Marker', cursive; }
 .info-container-contact .img-and-text {
   display: flex;
   justify-content: center; }
-  .info-container-contact .img-and-text .what-i-do {
-    margin: 30px; }
-    .info-container-contact .img-and-text .what-i-do p {
-      margin: 20px auto;
-      text-align: right;
-      font-size: 1em;
-      line-height: 1.5em;
-      width: 100%;
-      max-width: 300px; }
   .info-container-contact .img-and-text img {
     width: 80%;
     max-width: 220px;
@@ -303,15 +293,10 @@ h3 {
     .info-container-contact .img-and-text .who-am-i p {
       margin: 20px auto;
       text-align: left;
-      font-size: 1em;
-      line-height: 1.5em;
+      font-size: 1rem;
+      line-height: 1.5rem;
       width: 100%;
       max-width: 300px; }
-  .info-container-contact .img-and-text h4 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    font-family: 'Permanent Marker', cursive; }
   .info-container-contact .img-and-text ul {
     margin-top: 20px;
     list-style-type: none; }
@@ -320,12 +305,7 @@ h3 {
   justify-content: center;
   width: 100%; }
   .info-container-contact .skills-and-interests h4 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: left;
-    font-family: 'Permanent Marker', cursive; }
+    text-align: left; }
   .info-container-contact .skills-and-interests .skills, .info-container-contact .skills-and-interests .interests {
     width: auto;
     margin: 0 30px 20px; }
@@ -335,24 +315,12 @@ h3 {
   width: 100%;
   bottom: 0px;
   margin-top: 50px;
-  margin-bottom: 30px;
-  display: none; }
-  .info-container-contact .contact-info-footer h4 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: 'Permanent Marker', cursive; }
+  margin-bottom: 30px; }
 
-.shown .contact-info-footer {
-  display: block; }
-
+/* SPECIFIC LAYOUT FOR CONTACT PAGE */
 .close {
   font-size: 3rem;
-  display: none;
-  color: #555; }
-
-.close-shown {
+  color: #555;
   display: inline;
   position: absolute;
   right: 0px;
@@ -373,79 +341,26 @@ h3 {
     width: 47vw; }
     .info-container .info-item:nth-child(3) {
       width: 95vw;
-      max-width: 750px; }
-
-  .expanded {
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
-    max-width: 100vw;
-    border-radius: 0%;
-    box-shadow: 0px 0px 0px 0px blue;
-    position: absolute;
-    margin: 0px auto;
-    top: 0px;
-    left: 0px;
-    z-index: 99;
-    overflow: scroll; }
-    .expanded:hover {
-      box-shadow: 0px 0px 0px 0px #222; } }
-@media all and (max-width: 1000px) {
-  .content-wrapper {
-    justify-content: space-around; }
-
-  .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
-    font-size: 5em; } }
-@media all and (max-width: 900px) {
+      max-width: 750px; } }
+@media all and (max-width: 700px) {
   h1 {
-    font-size: 3em;
-    margin-bottom: 20px; }
+    font-size: 2.5rem; }
 
-  .content-wrapper {
-    height: 100%;
-    justify-content: space-around;
-    align-content: center; }
+  .triggers .trigger i {
+    font-size: 4rem; }
 
-  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-    width: 28vw;
-    height: 28vw;
-    margin: 10px 0; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
-      font-size: 5em; }
-
-  .expanded {
-    height: auto;
-    width: 100vw;
-    margin: 0; } }
-@media all and (max-width: 750px) {
   .info-container .info-item {
     width: 95vw; } }
 @media all and (max-width: 600px) {
-  h1 {
-    font-size: 2em; }
-
-  .content-wrapper {
-    height: 100%;
-    justify-content: center;
-    align-content: center; }
-
-  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-    width: 28vw;
-    height: 28vw;
-    margin: 10px 10px; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
-      font-size: 4em; }
-
-  .expanded {
-    height: auto;
-    width: 100vw;
-    margin: 0; }
+  .triggers .trigger i {
+    font-size: 4em; }
 
   .info-container-contact .img-and-text {
     display: block;
     text-align: center; }
     .info-container-contact .img-and-text img {
-      margin: 0 auto; }
+      margin: 0 auto;
+      padding-top: 20px; }
     .info-container-contact .img-and-text .who-am-i {
       display: inline-block;
       width: 90vw;
@@ -459,17 +374,11 @@ h3 {
       .info-container-contact .skills-and-interests .skills h4, .info-container-contact .skills-and-interests .interests h4 {
         text-align: center; } }
 @media all and (max-width: 500px) {
-  .contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-    width: 30vw;
-    height: 30vw;
-    margin: 10px 20px; }
-    .contact .icon i, .music .icon i, .writing .icon i, .cooperation .icon i, .coding .icon i, .community .icon i, .wellbeing .icon i {
-      font-size: 3em; }
+  h1 {
+    font-size: 2rem; }
 
-  .expanded {
-    height: auto;
-    width: 100vw;
-    margin: 0; } }
+  .triggers .trigger i {
+    font-size: 3em; } }
 /* KEYFRAMES */
 @keyframes slideFromBelow {
   0% {

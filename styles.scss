@@ -95,18 +95,21 @@ html {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* NO-HOVER FOR TOUCHSCREENS */
 html.no-hover {
-	.contact, .cooperation, .coding, .wellbeing, .music, .community {
+	.contact-trigger, .cooperation-trigger, .coding-trigger, .wellbeing-trigger, .music-trigger, .community-trigger {
 		&:hover {
 			box-shadow: 0px 0px 20px 3px #222;
 			i {
-				color: inherit;
+				color: #555;
 			}
 		}
 	}
 
-	.expanded {
+	.contact, .cooperation, .coding, .wellbeing, .music, .community {
 		a {
 			color: #222;
 			i {
@@ -118,7 +121,10 @@ html.no-hover {
 		}
 	}
 }
-
+/* NO-HOVER FOR TOUCHSCREENS */
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 body {
 	background-color: #555;
@@ -135,7 +141,6 @@ body {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /* SPINNER UNTIL IMAGES HAVE LOADED */
-
 .loading {
 	top: 20px;
 	right: 20px;
@@ -169,9 +174,10 @@ body {
 
 h1 {
 	text-align: center;
-	font-size: 3.5em;
+	font-size: 3rem;
 	color: #DDD;
 	padding-top: 20px;
+	padding-bottom: 10px;
 	font-family: 'Permanent Marker', cursive;
 }
 
@@ -183,7 +189,15 @@ h3 {
 	font-family: 'Nothing You Could Do', cursive;
 }
 
-.content-wrapper {
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* TRIGGERS */
+
+.triggers {
 	display: flex;
 	width: 100%;
 	max-width: 900px;
@@ -192,105 +206,96 @@ h3 {
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
-}
 
-.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing  {
-	border-radius: 100%;
-	height: 240px;
-	width: 240px;
-
-	display: inline-block;
-	position: relative;
-	margin: 20px;
-	box-shadow: 0px 0px 20px 3px #222;
-
-
-	.icon {
-		display: inline-block;
-		height: 100%;
-		width: 100%;
-		text-align: center;
+	.contact-trigger, .music-trigger, .writing-trigger, .cooperation-trigger, .coding-trigger, .community-trigger, .wellbeing-trigger  {
+		border-radius: 100%;
+		height: 26vw;
+		width: 26vw;
+		max-height: 240px;
+		max-width: 240px;
 		position: relative;
-		color: #555;
+		margin: 20px;
+		box-shadow: 0px 0px 20px 3px #222;
 		cursor: pointer;
 
 		i {
+			color: #555;
 			position: absolute;
 			top: 50%;
+			left: 50%;
 			transform: translate(-50%, -50%);
-			font-size: 6em;
+			font-size: 5rem;
+
+		}
+
+		&:hover {
+			box-shadow: 0px 0px 20px 10px #222;
+			i {
+				color: #222;
+			}
 		}
 	}
-
-	.icon-hidden {
-		display: none;
-	}
-
-	&:hover {
-		box-shadow: 0px 0px 20px 10px #222;
-		i {
-			color: #222;
-		}
-	}
-
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /* COLORS */
 
-.contact {
+.contact, .contact-trigger {
 	background-color: #C7F;
 }
-.cooperation {
+.cooperation, .cooperation-trigger {
 	background-color: #EC5;
 }
-.coding {
+.coding, .coding-trigger {
 	background-color: #F97;
 }
-.wellbeing {
+.wellbeing, .wellbeing-trigger {
 	background-color: #4AD;
 }
-.music {
+.music, .music-trigger {
 	background-color: #8F6;
 }
-.community {
+.community, .community-trigger {
 	background-color: #D67;
 }
 
 
-.expanded {
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* SECTIONS */
+
+.contact, .cooperation, .coding, .wellbeing, .music, .community {
+	display: none;
 	height: auto;
 	min-height: 100vh;
 	width: 100%;
-	border-radius: 0%;
-	box-shadow: 0px 0px 0px 0px blue;
-	&:hover {
-		box-shadow: 0px 0px 0px 0px #222;
-	}
 	position: absolute;
 	margin: 0px auto;
 	top: 0px;
 	left: 0px;
 	z-index: 99;
-	//overflow: scroll;
 	i {
 		color: #222;
 	}
 }
 
+
+
 .contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
-	font-size: 1.2em;
-	line-height: 1.4em;
-	height: 0px;
-	overflow: hidden;
+	font-size: 1rem;
+	line-height: 1.4rem;
 	margin: 10px;
+	height: 100%;
+	color: rgb(50, 50, 50);
 
 	h2 {
-		font-size: 2.5em;
-		line-height: 1.2em;
-		margin: 40px 0;
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+		margin: 60px 0 40px;
 		font-family: 'Permanent Marker', cursive;
 	}
 
@@ -300,7 +305,7 @@ h3 {
 		margin: 0 auto 20px;
 		display: flex;
 		justify-content: space-around;
-		font-size: 2em;
+		font-size: 2rem;
 	}
 
 	.in-short {
@@ -312,12 +317,9 @@ h3 {
 		font-family: 'Nothing You Could Do', cursive;
 	}
 
-}
-
-.shown {
-	height: 100%;
-	color: rgba(50, 50, 50, 1);
-	overflow: scroll;
+	a {
+		color: #323232;
+	}
 }
 
 
@@ -371,29 +373,26 @@ h3 {
 			}
 		}
 	}
-
-
-
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/* SPECIFIC LAYOUT FOR CONTACT PAGE */
+
 .info-container-contact {
+	h4 {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-family: 'Permanent Marker', cursive;
+	}
+
 	.img-and-text {
 		display: flex;
 		justify-content: center;
-
-		.what-i-do {
-			margin: 30px;
-
-			p {
-				margin: 20px auto;
-				text-align: right;
-				font-size: 1em;
-				line-height: 1.5em;
-				width: 100%;
-				max-width: 300px;
-			}
-
-		}
 
 		img {
 			width: 80%;
@@ -409,24 +408,12 @@ h3 {
 			p {
 				margin: 20px auto;
 				text-align: left;
-				font-size: 1em;
-				line-height: 1.5em;
+				font-size: 1rem;
+				line-height: 1.5rem;
 				width: 100%;
 				max-width: 300px;
 			}
 		}
-
-
-
-
-		h4 {
-			font-size: 1.2em;
-			font-weight: bold;
-			margin-top: 20px;
-			font-family: 'Permanent Marker', cursive;
-		}
-
-
 
 		ul {
 			margin-top: 20px;
@@ -438,14 +425,11 @@ h3 {
 		display: flex;
 		justify-content: center;
 		width: 100%;
+
 		h4 {
-			font-size: 1.2em;
-			font-weight: bold;
-			margin-top: 20px;
-			margin-bottom: 10px;
 			text-align: left;
-			font-family: 'Permanent Marker', cursive;
 		}
+
 
 		.skills, .interests {
 			width: auto;
@@ -461,35 +445,18 @@ h3 {
 		bottom: 0px;
 		margin-top: 50px;
 		margin-bottom: 30px;
-		display: none;
-
-		h4 {
-			font-size: 1.2em;
-			font-weight: bold;
-			margin-top: 20px;
-			margin-bottom: 10px;
-			font-family: 'Permanent Marker', cursive;
-		}
 	}
 
 }
-
-
-
-.shown {
-	.contact-info-footer {
-		display: block;
-	}
-}
+/* SPECIFIC LAYOUT FOR CONTACT PAGE */
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 
 .close {
 	font-size: 3rem;
-	display: none;
 	color: #555;
-}
-
-.close-shown {
 	display: inline;
 	position: absolute;
 	right: 0px;
@@ -525,117 +492,28 @@ h3 {
 			}
 		}
 	}
-
-	.expanded {
-		min-height: 100vh;
-		height: auto;
-		width: 100%;
-		max-width: 100vw;
-		border-radius: 0%;
-		box-shadow: 0px 0px 0px 0px blue;
-		&:hover {
-			box-shadow: 0px 0px 0px 0px #222;
-		}
-		position: absolute;
-		margin: 0px auto;
-		top: 0px;
-		left: 0px;
-		z-index: 99;
-		overflow: scroll;
-	}
 }
 
 
-@media all and (max-width: 1000px) {
-	.content-wrapper {
-		justify-content: space-around;
-	}
-
-	.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-		//width: 25vw;
-		//height: 25vw;
-		//margin: 10px 0;
-		.icon {
-			i {
-				font-size: 5em;
-			}
-		}
-	}
-
-}
-
-@media all and (max-width: 900px) {
+@media all and (max-width: 700px) {
 	h1 {
-		font-size: 3em;
-		margin-bottom: 20px;
+		font-size: 2.5rem;
 	}
 
-	.content-wrapper {
-		height: 100%;
-		justify-content: space-around;
-		align-content: center;
+	.triggers .trigger i {
+		font-size: 4rem;
 	}
 
-	.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-		width: 28vw;
-		height: 28vw;
-		margin: 10px 0;
-		.icon {
-			i {
-				font-size: 5em;
-			}
-		}
+	.info-container .info-item {
+		width: 95vw;
 	}
-
-	.expanded {
-		height: auto;
-		width: 100vw;
-		margin: 0;
-	}
-
 }
-
-
-@media all and (max-width: 750px) {
-	.info-container {
-		.info-item {
-			width: 95vw;
-		}
-	}
-
-
-}
-
 
 
 @media all and (max-width: 600px) {
-	h1 {
-		font-size: 2em;
+ 	.triggers .trigger i {
+		font-size: 4em;
 	}
-
-	.content-wrapper {
-		height: 100%;
-		justify-content: center;
-		align-content: center;
-	}
-
-	.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-		width: 28vw;
-		height: 28vw;
-		margin: 10px 10px;
-		.icon {
-			i {
-				font-size: 4em;
-			}
-		}
-	}
-
-	.expanded {
-		height: auto;
-		width: 100vw;
-		margin: 0;
-	}
-
 
 	.info-container-contact {
 		.img-and-text {
@@ -644,6 +522,7 @@ h3 {
 
 			img {
 				margin: 0 auto;
+				padding-top: 20px;
 			}
 
 			.who-am-i {
@@ -670,25 +549,13 @@ h3 {
 }
 
 
-
-
 @media all and (max-width: 500px) {
-	.contact, .music, .writing, .cooperation, .coding, .community, .wellbeing {
-		width: 30vw;
-		height: 30vw;
-		margin: 10px 20px;
-
-		.icon {
-			i {
-				font-size: 3em;
-			}
-		}
+	h1 {
+		font-size: 2rem;
 	}
 
-	.expanded {
-		height: auto;
-		width: 100vw;
-		margin: 0;
+	.triggers .trigger i {
+		font-size: 3em;
 	}
 }
 
@@ -706,7 +573,7 @@ h3 {
 
 @keyframes slideDown {
 	100% {
-		transform: translateY(100%); //testing
+		transform: translateY(100%);
 	}
 }
 
