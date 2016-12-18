@@ -10,8 +10,7 @@
     "icons": [
         {
             "src": "/images/IconiAntti.png",
-            "sizes": "32x32",
-            "type": "image/png"
+            "sizes": "32x32"
         }
     ],
     "scope": "/"
