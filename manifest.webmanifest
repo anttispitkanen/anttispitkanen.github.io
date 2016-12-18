@@ -4,7 +4,7 @@
     "start_url": "/index.html",
     "display": "standalone",
     "orientation": "portrait",
-    "background-color": "#555",
+    "background_color": "#555",
     "theme_color": "#C7F",
     "description": "The homepage of Antti Pitkänen, a creator",
     "icons": [
