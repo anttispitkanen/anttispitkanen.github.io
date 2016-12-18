@@ -9,9 +9,29 @@
     "description": "The homepage of Antti Pitkänen, a creator",
     "icons": [
         {
-            "src": "/images/IconiAntti.png",
-            "sizes": "32x32"
-        }
-    ],
+            "src": "images/icons/icon16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        }, {
+            "src": "/images/icons/icon32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }, {
+            "src": "/images/icons/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        }, {
+            "src": "/images/icons/icon60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+        }, {
+            "src": "/images/icons/icon80.png",
+            "sizes": "80x80",
+            "type": "image/png"
+        }, {
+            "src": "/images/icons/icon101.png",
+            "sizes": "101x101",
+            "type": "image/png"
+        }],
     "scope": "/"
 }
