@@ -73,8 +73,9 @@ function switchToNextElement() {
     document.getElementById(nextID).style.display = 'block';
     document.getElementById(nextID).style.animation = 'slideFromRight 0.5s ease-in-out';
 
-    window.scrollTo(0, 0);
     document.getElementById(nextID).scrollTop = 0;
+    document.getElementById(nextID).scrollLeft = 0;
+    window.scrollTo(0, 0);
 
     state.openSection = state.sections[nextElement];
 }

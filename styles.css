@@ -102,7 +102,9 @@ body {
   font-size: 14px;
   text-align: center;
   height: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden; }
 
 /* SPINNER UNTIL IMAGES HAVE LOADED */
 .loading {
@@ -270,7 +272,7 @@ h3 {
       text-align: center; }
       .info-container .info-item .some-buttons a {
         margin: 0 20px;
-        font-size: 1.2em; }
+        font-size: 1.3rem; }
 
 /* SPECIFIC LAYOUT FOR CONTACT PAGE */
 .info-container-contact h4 {
