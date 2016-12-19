@@ -93,6 +93,10 @@ html.no-hover .contact a, html.no-hover .cooperation a, html.no-hover .coding a,
     color: #222; }
     html.no-hover .contact a i:hover, html.no-hover .cooperation a i:hover, html.no-hover .coding a i:hover, html.no-hover .wellbeing a i:hover, html.no-hover .music a i:hover, html.no-hover .community a i:hover {
       color: #222; }
+html.no-hover .info .large-some-buttons a:hover {
+  animation: none; }
+html.no-hover .info-item .some-buttons a:hover i {
+  animation: none; }
 
 /* NO-HOVER FOR TOUCHSCREENS */
 body {
@@ -157,8 +161,8 @@ h3 {
     border-radius: 100%;
     height: 26vw;
     width: 26vw;
-    max-height: 240px;
-    max-width: 240px;
+    max-height: 230px;
+    max-width: 230px;
     position: relative;
     margin: 20px;
     box-shadow: 0px 0px 20px 3px #222;
@@ -206,34 +210,36 @@ h3 {
   left: 0px;
   z-index: 99; }
   .contact i, .cooperation i, .coding i, .wellbeing i, .music i, .community i {
-    color: #222; }
+    color: #323232; }
 
-.contact-info, .music-info, .cooperation-info, .writing-info, .coding-info, .community-info, .wellbeing-info {
+.info {
   font-size: 1rem;
   line-height: 1.4rem;
   margin: 10px;
   height: 100%;
   color: #323232; }
-  .contact-info h2, .music-info h2, .cooperation-info h2, .writing-info h2, .coding-info h2, .community-info h2, .wellbeing-info h2 {
+  .info h2 {
     font-size: 2.5rem;
     line-height: 2.5rem;
     margin: 60px 0 40px;
     font-family: 'Permanent Marker', cursive; }
-  .contact-info .large-some-buttons, .music-info .large-some-buttons, .cooperation-info .large-some-buttons, .writing-info .large-some-buttons, .coding-info .large-some-buttons, .community-info .large-some-buttons, .wellbeing-info .large-some-buttons {
+  .info .large-some-buttons {
     width: 100%;
     max-width: 400px;
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-around;
     font-size: 2rem; }
-  .contact-info .in-short, .music-info .in-short, .cooperation-info .in-short, .writing-info .in-short, .coding-info .in-short, .community-info .in-short, .wellbeing-info .in-short {
+    .info .large-some-buttons a:hover {
+      animation: .7s shake linear; }
+  .info .in-short {
     width: 95vw;
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
     font-size: 1.3rem;
     font-family: 'Nothing You Could Do', cursive; }
-  .contact-info a, .music-info a, .cooperation-info a, .writing-info a, .coding-info a, .community-info a, .wellbeing-info a {
+  .info a {
     color: #323232; }
 
 .info-container {
@@ -273,6 +279,8 @@ h3 {
       .info-container .info-item .some-buttons a {
         margin: 0 20px;
         font-size: 1.3rem; }
+        .info-container .info-item .some-buttons a:hover i {
+          animation: .5s shake linear; }
 
 /* SPECIFIC LAYOUT FOR CONTACT PAGE */
 .info-container-contact h4 {
@@ -379,6 +387,11 @@ h3 {
   h1 {
     font-size: 2rem; }
 
+  .triggers .trigger {
+    height: 30vw;
+    width: 30vw;
+    margin: 15px; }
+
   .triggers .trigger i {
     font-size: 3em; } }
 /* KEYFRAMES */
@@ -394,5 +407,16 @@ h3 {
 @keyframes slideFromRight {
   0% {
     transform: translateX(100%); } }
+@keyframes shake {
+  30% {
+    transform: translateY(-5px) rotateZ(20deg); }
+  40% {
+    transform: translateY(-5px) rotateZ(-20deg); }
+  50% {
+    transform: translateY(-5px) rotateZ(10deg); }
+  70% {
+    transform: translateY(-5px) rotateZ(-10deg); }
+  100% {
+    transform: translateY(0) rotateZ(0deg); } }
 
 /*# sourceMappingURL=styles.css.map */
