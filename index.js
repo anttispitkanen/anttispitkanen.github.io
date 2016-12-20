@@ -11,13 +11,17 @@ var state = {
     'sections': ['contact', 'cooperation', 'coding', 'wellbeing', 'music', 'community']
 }
 
+var SLIDE_FROM_LEFT = 'slideFromLeft 0.5s ease-in-out';
+var SLIDE_FROM_RIGHT = 'slideFromRight 0.5s ease-in-out';
+var SLIDE_FROM_BELOW = 'slideFromBelow 0.5s ease-in-out';
+var SLIDE_DOWN = 'slideDown 0.5s ease-in-out';
 
 
 
 function openElement(target) {
     window.history.pushState(null, null, '');
     document.getElementById(target).style.display = 'block';
-    document.getElementById(target).style.animation = 'slideFromBelow 0.5s ease-in-out';
+    document.getElementById(target).style.animation = SLIDE_FROM_BELOW;
     window.scrollTo(0, 0);
     document.getElementById(target).scrollTop = 0;
     state.openSection = target;
@@ -31,7 +35,7 @@ function openElement(target) {
 //close the open class after animating it down
 window.onpopstate = function() {
     var targetElement = state.openSection;
-    document.getElementById(targetElement).style.animation = 'slideDown 0.5s ease-in-out';
+    document.getElementById(targetElement).style.animation = SLIDE_DOWN;
 
     setTimeout(function() {
         document.getElementById(targetElement).style.display = 'none';;
@@ -71,11 +75,15 @@ function switchToNextElement() {
     document.getElementById(openID).style.display = 'none';
 
     document.getElementById(nextID).style.display = 'block';
-    document.getElementById(nextID).style.animation = 'slideFromRight 0.5s ease-in-out';
+    //document.getElementById(nextID).style.animation = SLIDE_FROM_RIGHT;
+    document.getElementById(nextID).style.animation = SLIDE_FROM_RIGHT;
 
-    document.getElementById(nextID).scrollTop = 0;
-    document.getElementById(nextID).scrollLeft = 0;
+
     window.scrollTo(0, 0);
+    document.body.scrollRight = 0;
+    //document.getElementById(nextID).scrollTop = 0;
+    //document.getElementById(nextID).scrollLeft = 0;
+
 
     state.openSection = state.sections[nextElement];
 }
@@ -101,10 +109,11 @@ function switchToPreviousElement() {
     document.getElementById(openID).style.display = 'none';
 
     document.getElementById(previousID).style.display = 'block';
-    document.getElementById(previousID).style.animation = 'slideFromLeft 0.5s ease-in-out';
+    document.getElementById(previousID).style.animation = SLIDE_FROM_LEFT;
 
     window.scrollTo(0, 0);
-    document.getElementById(previousID).scrollTop = 0;
+
+    //document.getElementById(previousID).scrollTop = 0;
 
     state.openSection = state.sections[previousElement];
 }

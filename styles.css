@@ -114,8 +114,8 @@ body {
 .loading {
   top: 20px;
   right: 20px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border: 2px solid #DDD;
   border-top: 2px solid #C7F;
   border-radius: 100%;
@@ -203,11 +203,11 @@ h3 {
   display: none;
   height: auto;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: absolute;
-  margin: 0px auto;
   top: 0px;
   left: 0px;
+  right: 0px;
   z-index: 99; }
   .contact i, .cooperation i, .coding i, .wellbeing i, .music i, .community i {
     color: #323232; }
