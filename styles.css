@@ -208,7 +208,8 @@ h3 {
   top: 0px;
   left: 0px;
   right: 0px;
-  z-index: 99; }
+  z-index: 99;
+  transition: left 0.5s ease-in-out; }
   .contact i, .cooperation i, .coding i, .wellbeing i, .music i, .community i {
     color: #323232; }
 
@@ -397,16 +398,24 @@ h3 {
 /* KEYFRAMES */
 @keyframes slideFromBelow {
   0% {
-    transform: translateY(100%); } }
+    transform: translateY(100%); }
+  100% {
+    transform: translateY(0); } }
 @keyframes slideDown {
+  0% {
+    transform: translateY(0); }
   100% {
     transform: translateY(100%); } }
 @keyframes slideFromLeft {
   0% {
-    transform: translateX(-100%); } }
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
 @keyframes slideFromRight {
   0% {
-    transform: translateX(100%); } }
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0); } }
 @keyframes shake {
   30% {
     transform: translateY(-5px) rotateZ(20deg); }

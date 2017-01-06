@@ -11,10 +11,10 @@ var state = {
     'sections': ['contact', 'cooperation', 'coding', 'wellbeing', 'music', 'community']
 }
 
-var SLIDE_FROM_LEFT = 'slideFromLeft 0.5s ease-in-out';
-var SLIDE_FROM_RIGHT = 'slideFromRight 0.5s ease-in-out';
-var SLIDE_FROM_BELOW = 'slideFromBelow 0.5s ease-in-out';
-var SLIDE_DOWN = 'slideDown 0.5s ease-in-out';
+var SLIDE_FROM_LEFT = 'slideFromLeft .3s ease-in-out';
+var SLIDE_FROM_RIGHT = 'slideFromRight .3s ease-in-out';
+var SLIDE_FROM_BELOW = 'slideFromBelow .5s ease-in-out';
+var SLIDE_DOWN = 'slideDown .5s ease-in-out';
 
 
 
@@ -75,14 +75,11 @@ function switchToNextElement() {
     document.getElementById(openID).style.display = 'none';
 
     document.getElementById(nextID).style.display = 'block';
-    //document.getElementById(nextID).style.animation = SLIDE_FROM_RIGHT;
     document.getElementById(nextID).style.animation = SLIDE_FROM_RIGHT;
 
 
     window.scrollTo(0, 0);
     document.body.scrollRight = 0;
-    //document.getElementById(nextID).scrollTop = 0;
-    //document.getElementById(nextID).scrollLeft = 0;
 
 
     state.openSection = state.sections[nextElement];
